@@ -121,3 +121,15 @@ First two Extra Credit exercises were the same as the `main` branch, and two add
   3. [Custom Props](next/04.extra-3.html)
 
 The Extra Credit exercises involving `PropTypes` were removed (because we'll be using TypeScript in these `next` branch workshops to sove pretty much the same issue). Instead we have another Extra Credit exercise where we use custom props to help render the children of a component.
+
+### 5. TypeScript with React
+
+- [Exercise Solution](next/05.tsx)
+- 💯 Extra Credit
+  1. [Improve autocomplete for the operator string](next/05.extra-1.tsx)
+  2. [Derive the operator type from the operations object](next/05.extra-2.tsx)
+  3. [Default prop values](next/05.extra-3.tsx)
+  4. [Reduce duplication for operation functions](next/05.extra-4.tsx)
+  5. [Use a “Constrained Identity Function (CIF)”](next/05.extra-5.tsx)
+
+This is a new exercise that introduces TypeScript for the purposes of the Epic React workshops. We start by learning the basics of TypeScript, from adding simple type annotations to our functions, to exploring some of the capabilities empowered by TypeScript in the Extra Credits such as adding autocomplete for custom types, deriving types from objects, and reducing duplication for type annotations by using Records and Constrained Identity Functions (CIF).
