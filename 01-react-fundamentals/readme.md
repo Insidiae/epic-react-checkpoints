@@ -152,3 +152,11 @@ We now go back to the rest of the exercises featured in the `main` branch, but t
   3. [Control the input value](next/07.extra-3.tsx)
 
 We practice more TypeScript with React by working with forms. We use the different generic types that React provides for working with forms and its inputs/event handlers/etc. We also learn how to improve the typing for forms by extending the generic types and overriding some types to accomodate our custom inputs. This exercise also has a different Extra Credit exercise for controlled form inputs, which demonstrates a couple more generics provided by React for TypeScript.
+
+### 8. Rendering Arrays
+
+- [Exercise Solution](next/08.tsx)
+- 💯 Extra Credit
+  1. [Adding a key prop](next/08.extra-1.tsx)
+
+This exercise greatly improves from the previous version in the `main` branch. We now implement the code to render the array of items ourselves, and adding the `key` prop is now moved into an Extra Credit exercise with a much more detailed explanation.
