@@ -6,7 +6,7 @@ This repository contains my notes and solution code as I go through Kent C. Dodd
 
 ## Table of Contents
 
-1. ▶️ [React Fundamentals](01-react-fundamentals/)
+1. ✅ [React Fundamentals](01-react-fundamentals/)
 2. React Hooks
 3. Advanced React Hooks
 4. Advanced React Patterns

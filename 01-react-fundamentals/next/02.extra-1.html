@@ -1,0 +1,29 @@
+<!-- Intro to raw React APIs -->
+<!-- http://localhost:3000/isolated/exercise/02.html -->
+
+<body>
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@17.0.1/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.1/umd/react-dom.development.js"></script>
+
+  <script type="module">
+    const rootElement = document.getElementById("root");
+
+    // 💯 See if you can figure out how to write the JavaScript
+    // + React code to generate this DOM output:
+    //   <ul class="sams-food">
+    //     <li>Green eggs</li>
+    //     <li>Ham</li>
+    //   </ul>
+    const samsFoodList = React.createElement(
+      "ul",
+      {
+        className: "sams-food",
+      },
+      React.createElement("li", null, "Green eggs"),
+      React.createElement("li", null, "Ham")
+    );
+    ReactDOM.render(samsFoodList, rootElement);
+  </script>
+</body>

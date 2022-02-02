@@ -1,0 +1,36 @@
+<!-- Using JSX -->
+<!-- http://localhost:3000/isolated/exercise/03.html -->
+
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@17.0.1/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.1/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
+  <script type="text/babel">
+    // 💯 Replace the `<div className="container">` with a fragment
+    // and inspect the DOM to notice that the elements are both rendered
+    // as direct children of `root`.
+
+    // const element = (
+    //   <React.Fragment>
+    //     <p>Here's Sam's favorite food:</p>
+    //     <ul className="sams-food">
+    //       <li>Green eggs</li>
+    //       <li>Ham</li>
+    //     </ul>
+    //   </React.Fragment>
+    // )
+    // or:
+    const element = (
+      <>
+        <p>Here's Sam's favorite food:</p>
+        <ul className="sams-food">
+          <li>Green eggs</li>
+          <li>Ham</li>
+        </ul>
+      </>
+    );
+
+    ReactDOM.render(element, document.getElementById("root"));
+  </script>
+</body>
