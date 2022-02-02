@@ -133,3 +133,12 @@ The Extra Credit exercises involving `PropTypes` were removed (because we'll be 
   5. [Use a “Constrained Identity Function (CIF)”](next/05.extra-5.tsx)
 
 This is a new exercise that introduces TypeScript for the purposes of the Epic React workshops. We start by learning the basics of TypeScript, from adding simple type annotations to our functions, to exploring some of the capabilities empowered by TypeScript in the Extra Credits such as adding autocomplete for custom types, deriving types from objects, and reducing duplication for type annotations by using Records and Constrained Identity Functions (CIF).
+
+### 6. Styling
+
+- [Exercise Solution](next/06.tsx)
+- 💯 Extra Credit
+  1. [Create a custom component](next/06.extra-1.tsx)
+  2. [Accept a size prop to encapsulate styling](next/06.extra-2.tsx)
+
+We now go back to the rest of the exercises featured in the `main` branch, but this time we use TypeScript to provide type annotations to the custom components that we make. To help with this, we can use the generic types provided by React, and we can even extend these generics with our own custom props as needed via intersection types.
