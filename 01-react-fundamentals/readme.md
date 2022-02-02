@@ -90,4 +90,13 @@ As a bonus, the Extra Credit shows a demo of a bug one might encounter when inco
 - 💯 Extra Credit
   1. [Generate the root node](next/01.extra-1.html)
 
-Looks pretty much the exact same as the `main` branch
+Looks pretty much the exact same as the `main` branch.
+
+### 2. Intro to raw React APIs
+
+- [Exercise Solution](next/02.html)
+- 💯 Extra Credit
+  1. [Nesting elements](next/02.extra-1.html)
+  2. [Deep nesting elements](next/02.extra-2.html)
+
+Again, pretty much the same as the `main` branch but the Extra Credit exercises go a bit more in-depth with nesting elements.
