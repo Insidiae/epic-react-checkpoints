@@ -100,3 +100,12 @@ Looks pretty much the exact same as the `main` branch.
   2. [Deep nesting elements](next/02.extra-2.html)
 
 Again, pretty much the same as the `main` branch but the Extra Credit exercises go a bit more in-depth with nesting elements.
+
+### 3. Using JSX
+
+- [Exercise Solution](next/03.html)
+- 💯 Extra Credit
+  1. [Interpolate `className` and `children`](next/03.extra-1.html)
+  2. [Spread props](next/03.extra-2.html)
+  3. [Deep nesting elements with JSX](next/03.extra-3.html)
+  4. [Using React Fragments](next/03.extra-4.html)
