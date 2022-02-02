@@ -142,3 +142,13 @@ This is a new exercise that introduces TypeScript for the purposes of the Epic R
   2. [Accept a size prop to encapsulate styling](next/06.extra-2.tsx)
 
 We now go back to the rest of the exercises featured in the `main` branch, but this time we use TypeScript to provide type annotations to the custom components that we make. To help with this, we can use the generic types provided by React, and we can even extend these generics with our own custom props as needed via intersection types.
+
+### 7. Forms
+
+- [Exercise Solution](next/07.tsx)
+- 💯 Extra Credit
+  1. [Using `ref`s](next/07.extra-1.tsx)
+  2. [Improve form typing](next/07.extra-2.tsx)
+  3. [Control the input value](next/07.extra-3.tsx)
+
+We practice more TypeScript with React by working with forms. We use the different generic types that React provides for working with forms and its inputs/event handlers/etc. We also learn how to improve the typing for forms by extending the generic types and overriding some types to accomodate our custom inputs. This exercise also has a different Extra Credit exercise for controlled form inputs, which demonstrates a couple more generics provided by React for TypeScript.
