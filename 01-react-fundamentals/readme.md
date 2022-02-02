@@ -109,3 +109,15 @@ Again, pretty much the same as the `main` branch but the Extra Credit exercises 
   2. [Spread props](next/03.extra-2.html)
   3. [Deep nesting elements with JSX](next/03.extra-3.html)
   4. [Using React Fragments](next/03.extra-4.html)
+
+First two Extra Credit exercises were the same as the `main` branch, and two additional Extra Credit exercises were added to demonstrate the power of JSX.
+
+### 4. Creating Custom Components
+
+- [Exercise Solution](next/04.html)
+- 💯 Extra Credit
+  1. [Using a custom component with `React.createElement`](next/04.extra-1.html)
+  2. [Using a custom component with JSX](next/04.extra-2.html)
+  3. [Custom Props](next/04.extra-3.html)
+
+The Extra Credit exercises involving `PropTypes` were removed (because we'll be using TypeScript in these `next` branch workshops to sove pretty much the same issue). Instead we have another Extra Credit exercise where we use custom props to help render the children of a component.
