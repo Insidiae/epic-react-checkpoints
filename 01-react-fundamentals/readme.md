@@ -1,6 +1,8 @@
 # React Fundamentals ⚛
 
-## 1. Basic JavaScript-rendered Hello World
+## Exercises
+
+### 1. Basic JavaScript-rendered Hello World
 
 - [Exercise Solution](exercises/01.html)
 - 💯 Extra Credit
@@ -10,7 +12,7 @@ We start by working with a barebones HTML file. Using the default JavaScript DOM
 
 Interestingly, we can skip the `<!DOCTYPE html>`, `<html>`, and `<head>` tags when writing the code for this exercise - the browser seems to automatically generate the missing tags even if we skip to only writing the `<body>` tag containing the code for our exercise!
 
-## 2. Intro to raw React APIs
+### 2. Intro to raw React APIs
 
 - [Exercise Solution](exercises/02.html)
 - 💯 Extra Credit
@@ -20,7 +22,7 @@ We are introduced to the APIs React provides for creating DOM nodes. Instead of 
 
 Upon doing the Extra Credit for this exercise, we might encounter a `react-warning-keys` warning if we pass the children directly to the `children` prop. We can make the warning go away (for now) by simply passing the children as additional arguments to the `createElement` call - we'll learn more about what these `key`s mean in a future section...
 
-## 3. Using JSX
+### 3. Using JSX
 
 - [Exercise Solution](exercises/03.html)
 - 💯 Extra Credit
@@ -31,7 +33,7 @@ We are introduced to JSX, which is really just syntactic sugar to make working w
 
 The Extra Credit exercises offer a deeper dive into the more fancy stuff we can do with JSX, such as interpolation and spreading variables into a component's props and/or children. Taking a peek at how this JSX compiles into the raw React API using Babel, we can start to appreciate the beauty of the React API with how it organizes the props and the children into its `createElement` method.
 
-## 4. Creating Custom Components
+### 4. Creating Custom Components
 
 - [Exercise Solution](exercises/04.html)
 - 💯 Extra Credit
@@ -49,7 +51,7 @@ Additional Extra Credit exercises also demonstrate `propTypes`, which is a way t
 
 Finally, we also try out React Fragments to render multiple elements without needing to specify a parent element first, which is something that may be useful when working with complex layout grids or tables.
 
-## 5. Styling
+### 5. Styling
 
 - [Exercise Solution](exercises/05.js)
 - 💯 Extra Credit
@@ -58,7 +60,7 @@ Finally, we also try out React Fragments to render multiple elements without nee
 
 We learn two different ways to style React components: Defining styles inline using the `style` prop, and defining styles with regular CSS then applying the styles through the `className` prop. With JSX, we see just how closely working with styles is to regular HTML, but here with JSX React offers a bit more flexibility by offering ways to combine styles using interpolation, and then using interpolation to help abstract the implementation details of these styles, as demonstrated in the Extra Credit exercises.
 
-## 6. Forms
+### 6. Forms
 
 - [Exercise Solution](exercises/06.js)
 - 💯 Extra Credit
@@ -70,7 +72,7 @@ In this exercise, we learn how React handles forms and what abstractions React p
 
 The Extra Credit exercises introduce some new React APIs that help us manage forms: Using `ref`s as an alternative to get the current value of a certain input, and using state variables to provide additional features to forms such as input validation (and displaying error messages as needed) and even programmatically controlling what kind of values a certain input can have.
 
-## 7. Rendering Arrays
+### 7. Rendering Arrays
 
 - [Exercise Solution](exercises/07.js)
 - 💯 Extra Credit
@@ -79,3 +81,13 @@ The Extra Credit exercises introduce some new React APIs that help us manage for
 We are introduced to an interesting quirk React has with regards to rendering arrays. We learn exactly what the `react-warning-keys` error shown in a previous exercise was for, and why React needs keys to keep track of array elements as they get changed, added, removed, or even shuffled.
 
 As a bonus, the Extra Credit shows a demo of a bug one might encounter when incorrectly setting keys - Without proper keys for React to use to keep track of elements, form inputs lose whatever part is highlighted as the inputs get shuffled around, and the focused element becomes hard to track as the focus does not follow the input as it gets moved to a new position in the array. With a proper setting of keys, this problem pretty much gets eliminated entirely.
+
+## `next` Branch Exercises
+
+### 1. Basic JavaScript-rendered Hello World
+
+- [Exercise Solution](next/01.html)
+- 💯 Extra Credit
+  1. [Generate the root node](next/01.extra-1.html)
+
+Looks pretty much the exact same as the `main` branch
