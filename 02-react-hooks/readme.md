@@ -46,3 +46,9 @@ The Extra Credit exercise also recommends a complementing idea: To _colocate sta
   3. [Add game history feature](exercises/04.extra-3.js)
 
 We work with a classic example featured in the React docs: Making a tic-tac-toe game using React! This exercise also demonstrates the power of React hooks by refactoring the class-based example featured in the React docs into React Hooks, and seeing how much duplicated code is stripped away with proper implementation of React Hooks. No more code reuse between `componentDidMount`, `componentDidUpdate`, and other class methods that manage the state - We just define the state using `useState` and the state variable can simply be called anywhere between the function component, and any side effects that result from updating the state variable can now be easily handled by `useEffect`!
+
+### 5. useRef and useEffect: DOM interaction
+
+- [Exercise Solution](exercises/05.js)
+
+This one is a pretty brief exercise that demonstrates how the `useRef` hook gives us access to the DOM nodes for components rendered by React, for instance when we are working with another library that needs direct access to DOM nodes (such as `vanilla-tilt` for this exercise). We also learn how `useEffect` lets us manage the extra functionalities added by these DOM libraries (i.e. event listeners) and remove those to free up memory as the component gets unmounted via a cleanup function defined in the `useEffect` call.
