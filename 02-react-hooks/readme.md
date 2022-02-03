@@ -52,3 +52,20 @@ We work with a classic example featured in the React docs: Making a tic-tac-toe 
 - [Exercise Solution](exercises/05.js)
 
 This one is a pretty brief exercise that demonstrates how the `useRef` hook gives us access to the DOM nodes for components rendered by React, for instance when we are working with another library that needs direct access to DOM nodes (such as `vanilla-tilt` for this exercise). We also learn how `useEffect` lets us manage the extra functionalities added by these DOM libraries (i.e. event listeners) and remove those to free up memory as the component gets unmounted via a cleanup function defined in the `useEffect` call.
+
+### 6. useEffect: HTTP requests
+
+- [Exercise Solution](exercises/06.js)
+- 💯 Extra Credit
+  1. [Handle errors](exercises/06.extra-1.js)
+  2. [Use a status](exercises/06.extra-2.js)
+  3. [Store the state in an object](exercises/06.extra-3.js)
+  4. [Create an ErrorBoundary component](exercises/06.extra-4.js)
+  5. [Re-mount the error boundary](exercises/06.extra-5.js)
+  6. [Use react-error-boundary](exercises/06.extra-6.js)
+  7. [Reset the error boundary](exercises/06.extra-7.js)
+  8. [Use resetKeys](exercises/06.extra-8.js)
+
+We work with a more advanced example for `useEffect` by handling HTTP requests. The Extra Credit exercises also dive deeper into working with HTTP requests (or any other async operations in general) by adding error handling, using a status state variable to help figure out what to render depending on the status of the request, and we also clean up our states by merging them all into one state object.
+
+More Extra Credit exercises also demonstrate the `ErrorBoundary` component. We start by doing a basic `ErrorBoundary` component following the React docs, then we move into a more fully-featured `ErrorBoundary` component provided by the `react-error-boundary` library which also provides some nicer features like the `resetErrorBoundary` and `resetKeys` props to reset the error state without having to unmount and re-mount the component.
