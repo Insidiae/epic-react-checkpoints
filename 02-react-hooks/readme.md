@@ -36,3 +36,13 @@ In the Extra Credit exercises, we are also introduced to the nicer features of R
 The React docs strongly recommend the idea of _"lifting state up"_, or to move the state that is needed by multiple sibling components to their lowest common parent component. This exercise demonstrates the process of lifting the state from a child component to a parent component so the state variable can also be accessed by a sibling component.
 
 The Extra Credit exercise also recommends a complementing idea: To _colocate state_, or "push the state back down" when it is no longer needed to be shared between multiple sibling components. This makes the state more easily manageable, and the one component that needs this state variable can be more easily reused as needed since it now manages the state it needs within the component itself.
+
+### 4. useState: tic tac toe
+
+- [Exercise Solution](exercises/04.js)
+- 💯 Extra Credit
+  1. [Preserve state in localStorage](exercises/04.extra-1.js)
+  2. [useLocalStorageState](exercises/04.extra-2.js)
+  3. [Add game history feature](exercises/04.extra-3.js)
+
+We work with a classic example featured in the React docs: Making a tic-tac-toe game using React! This exercise also demonstrates the power of React hooks by refactoring the class-based example featured in the React docs into React Hooks, and seeing how much duplicated code is stripped away with proper implementation of React Hooks. No more code reuse between `componentDidMount`, `componentDidUpdate`, and other class methods that manage the state - We just define the state using `useState` and the state variable can simply be called anywhere between the function component, and any side effects that result from updating the state variable can now be easily handled by `useEffect`!
