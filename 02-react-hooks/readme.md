@@ -102,3 +102,13 @@ Even though we work with a somewhat different example for this branch, the main 
   2. [Removing unnecessary controlled state](next/03.extra-2.tsx)
 
 Pretty much the same as the `main` branch exercise, but there's one additional Extra Credit that tells us to remove unnecessary controlled state when it is not needed by a component.
+
+### 4. Real World Review: Tic Tac Toe
+
+- [Exercise Solution](next/04.tsx)
+- 💯 Extra Credit
+  1. [Preserve state in localStorage](next/04.extra-1.tsx)
+  2. [useLocalStorageState](next/04.extra-2.tsx)
+  3. [Add game history feature](next/04.extra-3.tsx)
+
+We have the exact same example as the one in the `main` branch, just converted to TypeScript, though we also tidied things up a bit in Extra Credit 3 by merging the game state into a single object.
