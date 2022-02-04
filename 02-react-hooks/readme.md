@@ -69,3 +69,69 @@ This one is a pretty brief exercise that demonstrates how the `useRef` hook give
 We work with a more advanced example for `useEffect` by handling HTTP requests. The Extra Credit exercises also dive deeper into working with HTTP requests (or any other async operations in general) by adding error handling, using a status state variable to help figure out what to render depending on the status of the request, and we also clean up our states by merging them all into one state object.
 
 More Extra Credit exercises also demonstrate the `ErrorBoundary` component. We start by doing a basic `ErrorBoundary` component following the React docs, then we move into a more fully-featured `ErrorBoundary` component provided by the `react-error-boundary` library which also provides some nicer features like the `resetErrorBoundary` and `resetKeys` props to reset the error state without having to unmount and re-mount the component.
+
+## `next` Branch Exercises
+
+### 1. Managing UI State
+
+- [Exercise Solution](next/01.tsx)
+- 💯 Extra Credit
+  1. [Initialize state](next/01.extra-1.tsx)
+  2. [Derived state for validation](next/01.extra-2.tsx)
+  3. [Improve error UX](next/01.extra-3.tsx)
+  4. [Improve error accessibility for screen readers](next/01.extra-4.tsx)
+
+This `next` branch exercise goes more in-depth about managing state with `useState` and adds Extra Credit exercises about improving accessibility for our forms.
+
+### 2. Synchronizing Side-Effects
+
+- [Exercise Solution](next/02.tsx)
+- 💯 Extra Credit
+  1. [Lazy state initialization](next/02.extra-1.tsx)
+  2. [Effect dependencies](next/02.extra-2.tsx)
+  3. [Custom hook](next/02.extra-3.tsx)
+  4. [Flexible localStorage hook](next/02.extra-4.tsx)
+
+Even though we work with a somewhat different example for this branch, the main concepts remains exactly the same. A few minor caveats for typing our custom hooks in the Extra Credit exercises, but some quick googling successfully migrates out custom hook to TypeScript!
+
+### 3. Lifting state
+
+- [Exercise Solution](next/03.tsx)
+- 💯 Extra Credit
+  1. [Colocating state](next/03.extra-1.tsx)
+  2. [Removing unnecessary controlled state](next/03.extra-2.tsx)
+
+Pretty much the same as the `main` branch exercise, but there's one additional Extra Credit that tells us to remove unnecessary controlled state when it is not needed by a component.
+
+### 4. Real World Review: Tic Tac Toe
+
+- [Exercise Solution](next/04.tsx)
+- 💯 Extra Credit
+  1. [Preserve state in localStorage](next/04.extra-1.tsx)
+  2. [useLocalStorageState](next/04.extra-2.tsx)
+  3. [Add game history feature](next/04.extra-3.tsx)
+
+We have the exact same example as the one in the `main` branch, just converted to TypeScript, though we also tidied things up a bit in Extra Credit 3 by merging the game state into a single object.
+
+### 5. DOM Side-Effects
+
+- [Exercise Solution](next/05.tsx)
+- 💯 Extra Credit
+  1. [Side-effect cleanup](next/05.extra-1.tsx)
+
+We still have the `vanilla-tilt` example from the `main` branch, but we also continue from the previous example and add `useRef` to interact directly with the DOM node for the form input and `focus()` the input when the submitted input is invalid.
+
+### 6. useEffect: HTTP requests
+
+- [Exercise Solution](next/06.tsx)
+- 💯 Extra Credit
+  1. [Handle errors](next/06.extra-1.tsx)
+  2. [Use a status](next/06.extra-2.tsx)
+  3. [Store the state in an object](next/06.extra-3.tsx)
+  4. [Create an ErrorBoundary component](next/06.extra-4.tsx)
+  5. [Re-mount the error boundary](next/06.extra-5.tsx)
+  6. [Use react-error-boundary](next/06.extra-6.tsx)
+  7. [Reset the error boundary](next/06.extra-7.tsx)
+  8. [Use resetKeys](next/06.extra-8.tsx)
+
+This exercise is exactly the same as the one on the `main` branch, so we just convert everything to TypeScript. We can now also leverage TypeScript to provide some handy autocomplete features when we work with the exercise files!
