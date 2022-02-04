@@ -93,3 +93,12 @@ This `next` branch exercise goes more in-depth about managing state with `useSta
   4. [Flexible localStorage hook](next/02.extra-4.tsx)
 
 Even though we work with a somewhat different example for this branch, the main concepts remains exactly the same. A few minor caveats for typing our custom hooks in the Extra Credit exercises, but some quick googling successfully migrates out custom hook to TypeScript!
+
+### 3. Lifting state
+
+- [Exercise Solution](next/03.tsx)
+- 💯 Extra Credit
+  1. [Colocating state](next/03.extra-1.tsx)
+  2. [Removing unnecessary controlled state](next/03.extra-2.tsx)
+
+Pretty much the same as the `main` branch exercise, but there's one additional Extra Credit that tells us to remove unnecessary controlled state when it is not needed by a component.
