@@ -82,3 +82,14 @@ More Extra Credit exercises also demonstrate the `ErrorBoundary` component. We s
   4. [Improve error accessibility for screen readers](next/01.extra-4.tsx)
 
 This `next` branch exercise goes more in-depth about managing state with `useState` and adds Extra Credit exercises about improving accessibility for our forms.
+
+### 2. Synchronizing Side-Effects
+
+- [Exercise Solution](next/02.tsx)
+- 💯 Extra Credit
+  1. [Lazy state initialization](next/02.extra-1.tsx)
+  2. [Effect dependencies](next/02.extra-2.tsx)
+  3. [Custom hook](next/02.extra-3.tsx)
+  4. [Flexible localStorage hook](next/02.extra-4.tsx)
+
+Even though we work with a somewhat different example for this branch, the main concepts remains exactly the same. A few minor caveats for typing our custom hooks in the Extra Credit exercises, but some quick googling successfully migrates out custom hook to TypeScript!
