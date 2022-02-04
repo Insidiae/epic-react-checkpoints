@@ -69,3 +69,16 @@ This one is a pretty brief exercise that demonstrates how the `useRef` hook give
 We work with a more advanced example for `useEffect` by handling HTTP requests. The Extra Credit exercises also dive deeper into working with HTTP requests (or any other async operations in general) by adding error handling, using a status state variable to help figure out what to render depending on the status of the request, and we also clean up our states by merging them all into one state object.
 
 More Extra Credit exercises also demonstrate the `ErrorBoundary` component. We start by doing a basic `ErrorBoundary` component following the React docs, then we move into a more fully-featured `ErrorBoundary` component provided by the `react-error-boundary` library which also provides some nicer features like the `resetErrorBoundary` and `resetKeys` props to reset the error state without having to unmount and re-mount the component.
+
+## `next` Branch Exercises
+
+### 1. Managing UI State
+
+- [Exercise Solution](next/01.tsx)
+- 💯 Extra Credit
+  1. [Initialize state](next/01.extra-1.tsx)
+  2. [Derived state for validation](next/01.extra-2.tsx)
+  3. [Improve error UX](next/01.extra-3.tsx)
+  4. [Improve error accessibility for screen readers](next/01.extra-4.tsx)
+
+This `next` branch exercise goes more in-depth about managing state with `useState` and adds Extra Credit exercises about improving accessibility for our forms.
