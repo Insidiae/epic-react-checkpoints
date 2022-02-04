@@ -112,3 +112,11 @@ Pretty much the same as the `main` branch exercise, but there's one additional E
   3. [Add game history feature](next/04.extra-3.tsx)
 
 We have the exact same example as the one in the `main` branch, just converted to TypeScript, though we also tidied things up a bit in Extra Credit 3 by merging the game state into a single object.
+
+### 5. DOM Side-Effects
+
+- [Exercise Solution](next/05.tsx)
+- 💯 Extra Credit
+  1. [Side-effect cleanup](next/05.extra-1.tsx)
+
+We still have the `vanilla-tilt` example from the `main` branch, but we also continue from the previous example and add `useRef` to interact directly with the DOM node for the form input and `focus()` the input when the submitted input is invalid.
