@@ -120,3 +120,18 @@ We have the exact same example as the one in the `main` branch, just converted t
   1. [Side-effect cleanup](next/05.extra-1.tsx)
 
 We still have the `vanilla-tilt` example from the `main` branch, but we also continue from the previous example and add `useRef` to interact directly with the DOM node for the form input and `focus()` the input when the submitted input is invalid.
+
+### 6. useEffect: HTTP requests
+
+- [Exercise Solution](next/06.tsx)
+- 💯 Extra Credit
+  1. [Handle errors](next/06.extra-1.tsx)
+  2. [Use a status](next/06.extra-2.tsx)
+  3. [Store the state in an object](next/06.extra-3.tsx)
+  4. [Create an ErrorBoundary component](next/06.extra-4.tsx)
+  5. [Re-mount the error boundary](next/06.extra-5.tsx)
+  6. [Use react-error-boundary](next/06.extra-6.tsx)
+  7. [Reset the error boundary](next/06.extra-7.tsx)
+  8. [Use resetKeys](next/06.extra-8.tsx)
+
+This exercise is exactly the same as the one on the `main` branch, so we just convert everything to TypeScript. We can now also leverage TypeScript to provide some handy autocomplete features when we work with the exercise files!
