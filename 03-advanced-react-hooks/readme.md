@@ -45,3 +45,11 @@ The final Extra Credit exercise provides a more advanced example for `useContext
 - [Exercise Solution](exercises/04.js)
 
 This is a short and sweet demonstration of the main difference between `useEffect` and `useLayoutEffect`. In a nutshell, `useLayoutEffect` is more preferable to use than `useEffect` when we work directly with DOM nodes (via `ref`s), letting us make visual changes to the DOM before the browser paints out changes to the screen. `useLayoutEffect` is also useful for guaranteeing that one side-effect runs before other side-effects (like our `useSafeDispatch` example from a previous exercise).
+
+### 5. useImperativeHandle: scroll to top/bottom
+
+- [Exercise Solution](exercises/05.js)
+
+Another short and sweet demonstration featuring `forwardRef` and `useImperativeHandle`. `forwardRef` allows us to attach a `ref` to the instance of a function component. We can then use this `ref` to add imperative methods (such as the auto-scrolling feature in the example) to the component via `useImperativeHandle` (as opposed to simply taking such methods on the `ref.current` which has some edge case bugs when working with React's future concurrent mode/suspense feature).
+
+It is also noted that `useImperativeHandle` should be a last resort and should really only be used when there is genuinely no simpler way to deal with something declaratively.
