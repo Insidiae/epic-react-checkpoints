@@ -26,3 +26,16 @@ We are introduced to the `useCallback` hook, which is a mechanism for memoizing 
 Upon first writing the `useAsync` hook, we encounter the `exhaustive-deps` ESLint warning and we immediately see one of the use-cases for `useCallback` as it enables us to move the concerns of managing the dependency list into a more proper place and better help ESLint catch potential errors. We also improve the API for our custom `useAsync` hook by returning a memoized `run` function which can then be used by the users of this API on their own `useEffect`.
 
 Finally, we also solve a potential bug caused by the component being unmounted in the middle of an async call, resulting in the `dispatch` function being called for an already unmounted component. To solve this, we make yet another custom hook called `useSafeDispatch` that simply checks whether the component is still mounted before actually running the `dispatch` function.
+
+### 3. useContext: simple Counter
+
+- [Exercise Solution](exercises/03.js)
+- 💯 Extra Credit
+  1. [Create a consumer hook](exercises/03.extra-1.js)
+  2. [Caching in a context provider](exercises/03.extra-2.js)
+
+We are introduced to the `useContext` hook, which is one way to avoid the prop-drilling problem by creating the context using `createContext`, then defining some values in a provider component, whose children can then easily access those values via `useContext`.
+
+The Extra Credit exercises goes a bit deeper by moving the `useContext` call in its own custom hook, which lets us provide some _context_ (heh) whenever errors may arise (such as forgetting to wrap the children components within the provider component). Using a custom hook also lets us use other React hooks whenever we need extra functionalities that depend on these context values.
+
+The final Extra Credit exercise provides a more advanced example for `useContext` by building upon the Pokemon Info example and adding a way to cache the previously viewed pokemon and providing extra links to let the user go back to a previously viewed pokemon.
