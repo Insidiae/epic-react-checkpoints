@@ -39,3 +39,9 @@ We are introduced to the `useContext` hook, which is one way to avoid the prop-d
 The Extra Credit exercises goes a bit deeper by moving the `useContext` call in its own custom hook, which lets us provide some _context_ (heh) whenever errors may arise (such as forgetting to wrap the children components within the provider component). Using a custom hook also lets us use other React hooks whenever we need extra functionalities that depend on these context values.
 
 The final Extra Credit exercise provides a more advanced example for `useContext` by building upon the Pokemon Info example and adding a way to cache the previously viewed pokemon and providing extra links to let the user go back to a previously viewed pokemon.
+
+### 4. useLayoutEffect: auto-scrolling textarea
+
+- [Exercise Solution](exercises/04.js)
+
+This is a short and sweet demonstration of the main difference between `useEffect` and `useLayoutEffect`. In a nutshell, `useLayoutEffect` is more preferable to use than `useEffect` when we work directly with DOM nodes (via `ref`s), letting us make visual changes to the DOM before the browser paints out changes to the screen. `useLayoutEffect` is also useful for guaranteeing that one side-effect runs before other side-effects (like our `useSafeDispatch` example from a previous exercise).
