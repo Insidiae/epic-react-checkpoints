@@ -53,3 +53,11 @@ This is a short and sweet demonstration of the main difference between `useEffec
 Another short and sweet demonstration featuring `forwardRef` and `useImperativeHandle`. `forwardRef` allows us to attach a `ref` to the instance of a function component. We can then use this `ref` to add imperative methods (such as the auto-scrolling feature in the example) to the component via `useImperativeHandle` (as opposed to simply taking such methods on the `ref.current` which has some edge case bugs when working with React's future concurrent mode/suspense feature).
 
 It is also noted that `useImperativeHandle` should be a last resort and should really only be used when there is genuinely no simpler way to deal with something declaratively.
+
+### 6. useDebugValue: useMedia
+
+- [Exercise Solution](exercises/06.js)
+- 💯 Extra Credit
+  1. [Use the format function](exercises/06.extra-1.js)
+
+We learn how to create special labels when viewing our custom hooks within the React DevTools by using the `useDebugValue` hook. With `useDebugValue`, we can label our custom hooks in the React Devtools with important information such as the arguments passed to the custom hook and state variables used by the custom hook.
