@@ -85,3 +85,13 @@ Mostly the same as the `main` branch counterpart. The `<Counter />` component no
   4. [Abort unused requests](next/02.extra-4.tsx)
 
 The first part of this exercise was the same as the `main` branch counterpart. Providing the correct types for the exercise was a bit of a tricky task and requires a bit of knowledge about generics. The `useSafeDispatch` Extra Credit from the `main` branch was replaced with two other Extra Credit exercises that deals with race conditions and aborting unused requests.
+
+### 3. useContext: simple Counter
+
+- [Exercise Solution](next/03.tsx)
+- 💯 Extra Credit
+  1. [Create a consumer hook](next/03.extra-1.tsx)
+  2. [Caching in a context provider](next/03.extra-2.tsx)
+  3. [Remove context](next/03.extra-3.tsx)
+
+Mostly the same as in the `main` branch counterpart, though there's one additional Extra Credit exercise dealing with removing unnecessary context and directly passing props to children instead.
