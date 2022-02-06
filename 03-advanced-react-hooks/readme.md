@@ -107,3 +107,11 @@ Exactly the same as the `main` branch counterpart.
 - [Exercise Solution](next/05.tsx)
 
 Pretty much the same as the `main` branch counterpart. Keep in mind the type definitions for the `React.forwardRef` and `React.useImperativeHandle` APIs.
+
+### 6. useDebugValue: useMedia
+
+- [Exercise Solution](next/06.tsx)
+- 💯 Extra Credit
+  1. [Use the format function](next/06.extra-1.tsx)
+
+Exactly the same as the `main` branch counterpart.
