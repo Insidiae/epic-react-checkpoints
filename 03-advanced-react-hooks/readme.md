@@ -95,3 +95,9 @@ The first part of this exercise was the same as the `main` branch counterpart. P
   3. [Remove context](next/03.extra-3.tsx)
 
 Mostly the same as in the `main` branch counterpart, though there's one additional Extra Credit exercise dealing with removing unnecessary context and directly passing props to children instead.
+
+### 4. useLayoutEffect: auto-scrolling textarea
+
+- [Exercise Solution](next/04.tsx)
+
+Exactly the same as the `main` branch counterpart.
