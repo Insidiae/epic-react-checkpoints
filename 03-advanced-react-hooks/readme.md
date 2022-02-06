@@ -101,3 +101,9 @@ Mostly the same as in the `main` branch counterpart, though there's one addition
 - [Exercise Solution](next/04.tsx)
 
 Exactly the same as the `main` branch counterpart.
+
+### 5. useImperativeHandle: scroll to top/bottom
+
+- [Exercise Solution](next/05.tsx)
+
+Pretty much the same as the `main` branch counterpart. Keep in mind the type definitions for the `React.forwardRef` and `React.useImperativeHandle` APIs.
