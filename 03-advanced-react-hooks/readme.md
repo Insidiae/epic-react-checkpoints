@@ -74,3 +74,14 @@ We learn how to create special labels when viewing our custom hooks within the R
   4. [Traditional dispatch object with a type and switch statement](next/01.extra-4.tsx)
 
 Mostly the same as the `main` branch counterpart. The `<Counter />` component now has both an increment and decrement feature, which better demonstrates how different action types are handed within `useReducer`'s reducer function.
+
+### 2. useCallback: custom hooks
+
+- [Exercise Solution](next/02.tsx)
+- 💯 Extra Credit
+  1. [Use useCallback to empower the user to customize memoization](next/02.extra-1.tsx)
+  2. [Return a memoized `run` function from useAsync](next/02.extra-2.tsx)
+  3. [Avoid race conditions](next/02.extra-3.tsx)
+  4. [Abort unused requests](next/02.extra-4.tsx)
+
+The first part of this exercise was the same as the `main` branch counterpart. Providing the correct types for the exercise was a bit of a tricky task and requires a bit of knowledge about generics. The `useSafeDispatch` Extra Credit from the `main` branch was replaced with two other Extra Credit exercises that deals with race conditions and aborting unused requests.
