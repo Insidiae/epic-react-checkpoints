@@ -61,3 +61,16 @@ It is also noted that `useImperativeHandle` should be a last resort and should r
   1. [Use the format function](exercises/06.extra-1.js)
 
 We learn how to create special labels when viewing our custom hooks within the React DevTools by using the `useDebugValue` hook. With `useDebugValue`, we can label our custom hooks in the React Devtools with important information such as the arguments passed to the custom hook and state variables used by the custom hook.
+
+## `next` Branch Exercises
+
+### 1. useReducer: simple Counter
+
+- [Exercise Solution](next/01.tsx)
+- 💯 Extra Credit
+  1. [Accept the step as the action](next/01.extra-1.tsx)
+  2. [Simulate setState with an object](next/01.extra-2.tsx)
+  3. [Simulate setState with an object OR function](next/01.extra-3.tsx)
+  4. [Traditional dispatch object with a type and switch statement](next/01.extra-4.tsx)
+
+Mostly the same as the `main` branch counterpart. The `<Counter />` component now has both an increment and decrement feature, which better demonstrates how different action types are handed within `useReducer`'s reducer function.
