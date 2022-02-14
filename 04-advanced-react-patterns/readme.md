@@ -28,3 +28,17 @@ The Context Module Functions pattern helps abstract a complex sequence of state 
   - [`@reach/tabs`](https://reacttraining.com/reach-ui/tabs)
 
 The Compound Components Pattern makes use of the `React.Children` API to implicitly share state for children elements, without requiring users to pass these state variables as props to those children. This pattern is simple yet extensible, and you can add support for native DOM elements by simply not passing additional props for DOM elements, and you can also limit the components that can receive these state variables by checking the `child.type`.
+
+### 3. Flexible Compound Components
+
+> **One liner:** The Flexible Compound Components Pattern only differs from the previous exercise in that it uses React context. You should use this version of the pattern more often.
+
+- [Exercise Solution](exercises/03.js)
+- 💯 Extra Credit
+  1. [Custom hook validation](exercises/03.extra-1.js)
+
+#### Real World Projects that use this pattern:
+
+- [`@reach/accordion`](https://reacttraining.com/reach-ui/accordion)
+
+The Flexible Compound Components Pattern extends the previous pattern by making use of the Context API so that the state can be shared even with deeply nested children.
