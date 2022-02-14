@@ -58,3 +58,20 @@ The Flexible Compound Components Pattern extends the previous pattern by making 
   1. [Prop getters](exercises/04.extra-1.js)
 
 The Prop Collections and Getters Pattern is an extension for custom hooks, adding a collection of common predefined props which can then be passed along to whatever uses the hook. This is especially useful for adding common accessibility-related props without the user having to worry about having to add their own. This pattern can also be extended further by extracting these common predefined props into a helper function that does take the custom props that the users might want to use and composes them together with our predefined props.
+
+### 5. [State Reducer](https://kentcdodds.com/blog/the-state-reducer-pattern-with-react-hooks)
+
+> **One liner:** The State Reducer Pattern inverts control over the state management of your hook and/or component to the developer using it so they can control the state changes that happen when dispatching events.
+>
+> **Real World Projects that use this pattern:**
+>
+> - [downshift](https://github.com/downshift-js/downshift)
+
+- [Exercise Solution](exercises/05.js)
+- 💯 Extra Credit
+  1. [Default state reducer](exercises/05.extra-1.js)
+  2. [State reducer action types](exercises/05.extra-2.js)
+
+The State Reducer pattern is a prime practical usage of the `useReducer` hook, allowing us to implement inversion of control for our hooks and/or components and instead let the users control how the state changes by passing their own reducer function.
+
+Additionally, we could also provide a default reducer function in case the users only want a simple API and not have to pass their own reducer function every time they use these hooks and/or components. This also allows for some added simplicity for the users' own reducer functions because the users only have to worry about their own action types and state changes and then defer back to the default reducer function for all the other action types.
