@@ -75,3 +75,25 @@ The Prop Collections and Getters Pattern is an extension for custom hooks, addin
 The State Reducer pattern is a prime practical usage of the `useReducer` hook, allowing us to implement inversion of control for our hooks and/or components and instead let the users control how the state changes by passing their own reducer function.
 
 Additionally, we could also provide a default reducer function in case the users only want a simple API and not have to pass their own reducer function every time they use these hooks and/or components. This also allows for some added simplicity for the users' own reducer functions because the users only have to worry about their own action types and state changes and then defer back to the default reducer function for all the other action types.
+
+### 6. Control Props
+
+> **One liner:** The Control Props pattern allows users to completely control state values within your component. This differs from the state reducer pattern in the fact that you can not only change the state changes based on actions dispatched but you also can trigger state changes from outside the component or hook as well.
+>
+> **Real World Projects that use this pattern:**
+>
+> - [downshift](https://github.com/downshift-js/downshift)
+> - [`@reach/listbox`](https://reacttraining.com/reach-ui/listbox)
+
+- [Exercise Solution](exercises/06.js)
+- 💯 Extra Credit
+  1. [Add read only warning](exercises/06.extra-1.js)
+  2. [Add a controlled state warning](exercises/06.extra-2.js)
+  3. [Extract warnings to a custom hook](exercises/06.extra-3.js)
+  4. [Don’t warn in production](exercises/06.extra-4.js)
+
+While the State Reducer pattern gives users control over how to deal with state changes _when the state changes happen_, they might also want to have control over _when the state changes happen_. The Control Props pattern allows exactly that, giving an API similar to controlled `<form>` inputs with their `value` and `onChange` props giving users control over the input's state.
+
+With Control Props, users can optionally use a controlled prop combined with an `onChange` callback function to manually trigger state changes for the component, again giving a similar experience to controlled `<form>` inputs. We also learn how the `onChange` handler provides "suggested changes" which basically just tell the user what the updated value would've been if the component wasn't controlled.
+
+The Extra Credit exercises dive a bit deeper into the similarities with controlled `<form>` inputs by also providing console warnings when the user misuses the controlled props, such as passing a control prop without an `onChange` handler, or passing a value for the control prop and later passing `null` or `undefined` (or vice versa).
