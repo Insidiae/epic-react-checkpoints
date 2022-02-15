@@ -97,3 +97,18 @@ While the State Reducer pattern gives users control over how to deal with state 
 With Control Props, users can optionally use a controlled prop combined with an `onChange` callback function to manually trigger state changes for the component, again giving a similar experience to controlled `<form>` inputs. We also learn how the `onChange` handler provides "suggested changes" which basically just tell the user what the updated value would've been if the component wasn't controlled.
 
 The Extra Credit exercises dive a bit deeper into the similarities with controlled `<form>` inputs by also providing console warnings when the user misuses the controlled props, such as passing a control prop without an `onChange` handler, or passing a value for the control prop and later passing `null` or `undefined` (or vice versa).
+
+## `next` Branch Exercises
+
+### 1. Latest Ref 🆕
+
+> **One liner:** The Latest Ref Pattern allows you to access the latest value of a prop, state, or callback without needing to list it in a dependency array.
+>
+> **Real World Projects that use this pattern:**
+>
+> - [react-query](https://react-query.tanstack.com/)
+> - [`useInterval`](https://overreacted.io/making-setinterval-declarative-with-react-hooks/)
+
+- [Exercise Solution](next/01.tsx)
+
+React Hooks changed a fundamental default behavior of the old class-based components: With class-based components, you are guaranteed to always get the _latest_ value of your prop for every new render. With React Hooks, function closures mean that the props never change for each new render. Now the old default behavior might lead to some tricky, hard-to-reproduce bugs, but it might also be a behavior that we might want (such as, for example, the `debounce` function in this exercise). Fortunately, we can still implement the old default behavior by **using** a **ref**erence to the latest value.
