@@ -144,3 +144,19 @@ Again, pretty much the same as the `main` branch exercise. Take note of the Type
 A note from the exercise instructions:
 
 > 🆘 I couldn’t figure out how to make TypeScript happy with the possibility of calling a prop getter without any arguments: `getTogglerProps()`. See if you can figure out how to keep type safety while also making it possible to not have to pass an object if no additional props are needed.
+
+### 5. State Initializer 🆕
+
+> **One liner:** The state initializer pattern allows you to expose an API to users to be able to reset your component to it’s original state without having to completely unmount and remount the component.
+>
+> **Real World Projects that use this pattern:**
+>
+> - [downshift](https://github.com/downshift-js/downshift) (for the hero component you see at the top of most pages)
+> - [Reach UI](https://reach.tech/)
+
+- [Exercise Solution](next/05.tsx)
+- 💯 Extra Credit
+  1. [Support changing the `initialOn`](next/05.extra-1.tsx)
+
+Another new pattern, this time replicating the `defaultValue` behavior you may know from `<form>` input fields. The State Initializer pattern works in the exact same way, allowing the user of your components and/or hooks to provide an initial state value as needed. It also provides an easier way to reset
+the state value to whatever the user might want.
