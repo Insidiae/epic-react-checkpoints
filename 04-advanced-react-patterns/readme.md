@@ -97,3 +97,82 @@ While the State Reducer pattern gives users control over how to deal with state 
 With Control Props, users can optionally use a controlled prop combined with an `onChange` callback function to manually trigger state changes for the component, again giving a similar experience to controlled `<form>` inputs. We also learn how the `onChange` handler provides "suggested changes" which basically just tell the user what the updated value would've been if the component wasn't controlled.
 
 The Extra Credit exercises dive a bit deeper into the similarities with controlled `<form>` inputs by also providing console warnings when the user misuses the controlled props, such as passing a control prop without an `onChange` handler, or passing a value for the control prop and later passing `null` or `undefined` (or vice versa).
+
+## `next` Branch Exercises
+
+### 1. Latest Ref 🆕
+
+> **One liner:** The Latest Ref Pattern allows you to access the latest value of a prop, state, or callback without needing to list it in a dependency array.
+>
+> **Real World Projects that use this pattern:**
+>
+> - [react-query](https://react-query.tanstack.com/)
+> - [`useInterval`](https://overreacted.io/making-setinterval-declarative-with-react-hooks/)
+
+- [Exercise Solution](next/01.tsx)
+
+React Hooks changed a fundamental default behavior of the old class-based components: With class-based components, you are guaranteed to always get the _latest_ value of your prop for every new render. With React Hooks, function closures mean that the props never change for each new render. Now the old default behavior might lead to some tricky, hard-to-reproduce bugs, but it might also be a behavior that we might want (such as, for example, the `debounce` function in this exercise). Fortunately, we can still implement the old default behavior by **using** a **ref**erence to the latest value.
+
+### 2. Composition and Layout Components 🆕
+
+> **One liner:** The Compositional and Layout Components Pattern helps to avoid the prop drilling problem and enhances the reusability of your components.
+>
+> **Real World Projects that use this pattern:**
+>
+> - [kentcdodds.com](https://kentcdodds.com/) (for the hero component you see at the top of most pages)
+
+- [Exercise Solution](next/02.tsx)
+
+This is a really great alternative to `React.useContext` in solving the prop-drilling problem, taking advantage of the fact that we can pass (grandchildren) React components themselves as props which can just be rendered directly on the child components, eliminating the need to drill down the props from parent to child to grandchild, and just directly pass the relevant props from parent to grandchild. Incidentally, this also makes the child components more reusable because they are able to accept a larger variety of grandchildren components through their props.
+
+### 3. (Flexible) Compound Components
+
+- [Exercise Solution](next/03.tsx)
+- 💯 Extra Credit
+  1. [Custom hook validation](next/03.extra-1.tsx)
+
+Pretty much the same as the `main` branch exercise.
+
+### 4. Prop Collections and Getters
+
+- [Exercise Solution](next/04.tsx)
+- 💯 Extra Credit
+  1. [Prop getters](next/04.extra-1.tsx)
+
+Again, pretty much the same as the `main` branch exercise. Take note of the TypeScript type annotations though!
+
+A note from the exercise instructions:
+
+> 🆘 I couldn’t figure out how to make TypeScript happy with the possibility of calling a prop getter without any arguments: `getTogglerProps()`. See if you can figure out how to keep type safety while also making it possible to not have to pass an object if no additional props are needed.
+
+### 5. State Initializer 🆕
+
+> **One liner:** The state initializer pattern allows you to expose an API to users to be able to reset your component to it’s original state without having to completely unmount and remount the component.
+>
+> **Real World Projects that use this pattern:**
+>
+> - [downshift](https://github.com/downshift-js/downshift) (for the hero component you see at the top of most pages)
+> - [Reach UI](https://reach.tech/)
+
+- [Exercise Solution](next/05.tsx)
+- 💯 Extra Credit
+  1. [Support changing the `initialOn`](next/05.extra-1.tsx)
+
+Another new pattern, this time replicating the `defaultValue` behavior you may know from `<form>` input fields. The State Initializer pattern works in the exact same way, allowing the user of your components and/or hooks to provide an initial state value as needed. It also provides an easier way to reset
+the state value to whatever the user might want.
+
+### 6. State Reducer
+
+- [Exercise Solution](next/06.tsx)
+- 💯 Extra Credit
+  1. [Default state reducer](next/06.extra-1.tsx)
+
+Pretty much the same as the `main` branch exercise (previously numbered Exercise 5). Note the removal of the "State reducer action types" Extra Credit - TypeScript is smart enough to handle that for us by default!
+
+### 7. Control Props
+
+- [Exercise Solution](next/07.tsx)
+- 💯 Extra Credit
+  1. [`useControlPropWarnings`](next/07.extra-1.tsx)
+
+Pretty much the same as the `main` branch exercise (previously Exercise 6), but the Extra Credit exercises are condensed down into a single exercise that instead uses a custom hook to add the relevant control prop warnings.
