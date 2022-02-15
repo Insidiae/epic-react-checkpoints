@@ -160,3 +160,11 @@ A note from the exercise instructions:
 
 Another new pattern, this time replicating the `defaultValue` behavior you may know from `<form>` input fields. The State Initializer pattern works in the exact same way, allowing the user of your components and/or hooks to provide an initial state value as needed. It also provides an easier way to reset
 the state value to whatever the user might want.
+
+### 6. State Reducer
+
+- [Exercise Solution](next/06.tsx)
+- 💯 Extra Credit
+  1. [Default state reducer](next/06.extra-1.tsx)
+
+Pretty much the same as the `main` branch exercise (previously numbered Exercise 5). Note the removal of the "State reducer action types" Extra Credit - TypeScript is smart enough to handle that for us by default!
