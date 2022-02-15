@@ -168,3 +168,11 @@ the state value to whatever the user might want.
   1. [Default state reducer](next/06.extra-1.tsx)
 
 Pretty much the same as the `main` branch exercise (previously numbered Exercise 5). Note the removal of the "State reducer action types" Extra Credit - TypeScript is smart enough to handle that for us by default!
+
+### 7. Control Props
+
+- [Exercise Solution](next/07.tsx)
+- 💯 Extra Credit
+  1. [`useControlPropWarnings`](next/07.extra-1.tsx)
+
+Pretty much the same as the `main` branch exercise (previously Exercise 6), but the Extra Credit exercises are condensed down into a single exercise that instead uses a custom hook to add the relevant control prop warnings.
