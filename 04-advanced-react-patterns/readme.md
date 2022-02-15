@@ -112,3 +112,15 @@ The Extra Credit exercises dive a bit deeper into the similarities with controll
 - [Exercise Solution](next/01.tsx)
 
 React Hooks changed a fundamental default behavior of the old class-based components: With class-based components, you are guaranteed to always get the _latest_ value of your prop for every new render. With React Hooks, function closures mean that the props never change for each new render. Now the old default behavior might lead to some tricky, hard-to-reproduce bugs, but it might also be a behavior that we might want (such as, for example, the `debounce` function in this exercise). Fortunately, we can still implement the old default behavior by **using** a **ref**erence to the latest value.
+
+### 2. Composition and Layout Components 🆕
+
+> **One liner:** The Compositional and Layout Components Pattern helps to avoid the prop drilling problem and enhances the reusability of your components.
+>
+> **Real World Projects that use this pattern:**
+>
+> - [kentcdodds.com](https://kentcdodds.com/) (for the hero component you see at the top of most pages)
+
+- [Exercise Solution](next/01.tsx)
+
+This is a really great alternative to `React.useContext` in solving the prop-drilling problem, taking advantage of the fact that we can pass (grandchildren) React components themselves as props which can just be rendered directly on the child components, eliminating the need to drill down the props from parent to child to grandchild, and just directly pass the relevant props from parent to grandchild. Incidentally, this also makes the child components more reusable because they are able to accept a larger variety of grandchildren components through their props.
