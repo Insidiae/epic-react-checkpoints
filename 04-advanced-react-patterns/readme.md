@@ -121,6 +121,14 @@ React Hooks changed a fundamental default behavior of the old class-based compon
 >
 > - [kentcdodds.com](https://kentcdodds.com/) (for the hero component you see at the top of most pages)
 
-- [Exercise Solution](next/01.tsx)
+- [Exercise Solution](next/02.tsx)
 
 This is a really great alternative to `React.useContext` in solving the prop-drilling problem, taking advantage of the fact that we can pass (grandchildren) React components themselves as props which can just be rendered directly on the child components, eliminating the need to drill down the props from parent to child to grandchild, and just directly pass the relevant props from parent to grandchild. Incidentally, this also makes the child components more reusable because they are able to accept a larger variety of grandchildren components through their props.
+
+### 3. (Flexible) Compound Components
+
+- [Exercise Solution](next/03.tsx)
+- 💯 Extra Credit
+  1. [Custom hook validation](next/03.extra-1.tsx)
+
+Pretty much the same as the `main` branch exercise.
