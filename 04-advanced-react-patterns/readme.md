@@ -132,3 +132,15 @@ This is a really great alternative to `React.useContext` in solving the prop-dri
   1. [Custom hook validation](next/03.extra-1.tsx)
 
 Pretty much the same as the `main` branch exercise.
+
+### 4. Prop Collections and Getters
+
+- [Exercise Solution](next/04.tsx)
+- 💯 Extra Credit
+  1. [Prop getters](next/04.extra-1.tsx)
+
+Again, pretty much the same as the `main` branch exercise. Take note of the TypeScript type annotations though!
+
+A note from the exercise instructions:
+
+> 🆘 I couldn’t figure out how to make TypeScript happy with the possibility of calling a prop getter without any arguments: `getTogglerProps()`. See if you can figure out how to keep type safety while also making it possible to not have to pass an object if no additional props are needed.
