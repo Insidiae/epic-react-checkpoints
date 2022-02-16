@@ -94,3 +94,22 @@ Another option would be to just use a separate context provider if the children 
 > ```
 >
 > In hindsight, I guess the reason why the first example goes back to our unwanted initial behavior is because we're essentially mimicking the `const value = [state, dispatch]` assignment when we pass down the values wrapped in objects, because those objects _also get re-declared upon re-render and causes everything else to re-render anyway_ 😅
+
+### 6. Fix “perf death by a thousand cuts”
+
+- [Exercise Solution](exercises/06.js)
+- 💯 Extra Credit
+  1. [Separate contexts](exercises/06.extra-1.js)
+  2. [Limit the work consuming components do](exercises/06.extra-2.js)
+  3. [Write an HOC to get a slice of app state](exercises/06.extra-3.js)
+  4. [Use recoil](exercises/06.extra-4.js)
+
+In this exercise, we take a look at different ways to solve the “perf death by a thousand cuts” issue, or when there are too many components that by themselves are quite fast, but become a bottleneck when everything is put together.
+
+First, we simply just colocate the state values to which components actually _need_ to deal with them. Removing unnecessary state values from a global context prevents re-rendering other components that otherwise don't even need to consume those values.
+
+Another method is to separate the contexts for different values. This gives the same benefit as colocating state, but more useful for when your state values really do need to be consumed by multiple different components.
+
+Even after isolating different context values to their relevant components, some components might realistically only need a small portion (or _slice_) of the context value and won't need to re-render unless their specific slice of the context value gets modified. We can improve the performance of such components by creating a "middle-man" component that does the actual consuming of the context value, and then just pass the relevant slices to the components that need them. We can extend this further by making a generic higher-order component that serves as the "middle-man" component that can serve other different components.
+
+Finally, we can simply use a state management library such as [Recoil](https://recoiljs.org/) that already comes prebuilt with these optimizations in mind, and then our problem will just boil down to just working with the state management library's API and integrate it to our components.
