@@ -9,8 +9,8 @@ This repository contains my notes and solution code as I go through Kent C. Dodd
 1. ✅ [React Fundamentals ⚛](01-react-fundamentals/)
 2. ✅ [React Hooks 🎣](02-react-hooks/)
 3. ✅ [Advanced React Hooks 🔥](03-advanced-react-hooks/)
-4. ▶️ [Advanced React Patterns 🤯](04-advanced-react-patterns/)
-5. React Performance ⚡
+4. ✅ [Advanced React Patterns 🤯](04-advanced-react-patterns/)
+5. ▶️ [React Performance ⚡](05-react-performance/)
 6. Testing React Apps 🧐
 7. React Suspense 🔀
 8. Build an Epic React App 🚀
