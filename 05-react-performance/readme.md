@@ -29,3 +29,16 @@ Fortunately, React provides us a handful of tools to minimize the amount of time
 The first Extra Credit demonstrates another optimization React performs under the hood by simply running in production mode, where we see a vast improvement due to React building an optimized and minified bundle for production mode.
 
 The second Extra Credit exercise also introduces Web Workers, which is another optimization we might want to consider for expensive or slow calculations by putting them in a web worker that the browser can run in another thread separate to our app, boosting the performance even further.
+
+### 3. React.memo for reducing unnecessary re-renders
+
+- [Exercise Solution](exercises/03.js)
+- 💯 Extra Credit
+  1. [Use a custom comparator function](exercises/03.extra-1.js)
+  2. [Pass only primitive values](exercises/03.extra-2.js)
+
+Another way to take advantage of memoization for React apps is to use `React.memo`, which memoizes _components_ in a way that doesn't go through the whole process of re-rendering if the props passed to the component stay the same.
+
+We can visualize this re-rendering process through the `Profiler` tab of the React Devtools, giving us more insight into what exactly triggers a re-render for each component, and perhaps optimize the ones that really don't necessarily need to be re-rendered that often.
+
+The Extra Credit exercises dive deeper into using `React.memo` by making use of a custom comparator function that helps `React.memo` tell whether to re-render the component depending on which props change. The second Extra Credit exercise also gives a word of caution with prematurely optimizing re-renders this way - If you find yourself needing to do some complicated calculations (such as comparing different object properties) just to figure out whether to re-render a component, it might be wiser to perform those calculations in the parent component and instead pass primitive values that can be compared more easily, and might even totally eliminate the need for these large and complicated comparator functions!
