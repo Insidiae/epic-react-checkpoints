@@ -113,3 +113,17 @@ Another method is to separate the contexts for different values. This gives the 
 Even after isolating different context values to their relevant components, some components might realistically only need a small portion (or _slice_) of the context value and won't need to re-render unless their specific slice of the context value gets modified. We can improve the performance of such components by creating a "middle-man" component that does the actual consuming of the context value, and then just pass the relevant slices to the components that need them. We can extend this further by making a generic higher-order component that serves as the "middle-man" component that can serve other different components.
 
 Finally, we can simply use a state management library such as [Recoil](https://recoiljs.org/) that already comes prebuilt with these optimizations in mind, and then our problem will just boil down to just working with the state management library's API and integrate it to our components.
+
+### 7. Production performance monitoring
+
+- [Exercise Solution](exercises/07.js)
+- 💯 Extra Credit
+  1. [Use the experimental trace API ⚠️](exercises/07.extra-1.js)
+
+We are introduced to some production profiling tools React provides for us. The `<React.Profiler />` API lets us track some of the render times for the component it's wrapped around (along with its children) which we can then aggregate and send to our servers for us to monitor.
+
+> **NOTE:** Unless you build your app using `react-dom/profiling` and `scheduler/tracing-profiling`, this component won’t do anything.
+
+We can also use the [experimental trace API ⚠️](https://gist.github.com/bvaughn/8de925562903afd2e7a12554adcdda16) to include interactions such as button clicks, form submits, HTTP responses, etc. to our profiling logs.
+
+> ⚠️ **WARNING!** As of React 17, the experimental trace API is now removed. However, it seems [we can still utilize the interaction tracing API](https://github.com/kentcdodds/react-performance/issues/107), at least with the React version that the workshop uses as of writing these notes.
