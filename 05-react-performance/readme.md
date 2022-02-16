@@ -48,3 +48,49 @@ The Extra Credit exercises dive deeper into using `React.memo` by making use of 
 - [Exercise Solution](exercises/04.js)
 
 Sometimes we might receive a really large dataset containing tens of thousands of items to render and interact with. This obviously will cause performance issues simply due to the sheer amount of items we have to manage. We are introduced to the `react-virtual` library, which helps with "just-in-time" rendering only a small subset of our data, and display the appropriate items as the users navigate through the list. This gives the users the freedom to scroll through our tens of thousands of list items, but our component is now as performant as if it's only rendering 20-30 items at once (because it actually is)!
+
+### 5. Optimize context value
+
+- [Exercise Solution](exercises/05.js)
+- 💯 Extra Credit
+  1. [Separate the contexts](exercises/05.extra-1.js)
+
+Whenever the context value changes between renders, the consuming components also trigger a re-render regardless of whether they're `React.memo`-ed or not. There's a bit of a gotcha here - when putting your context values into a single array/object, it still triggers a re-render of all consuming elements even though the individual values themselves all stay the same. This is because we're essentially creating a brand new array/object every single render, triggering a re-render for the consuming elements regardless of whether the values in that new array/object is the same as the previous one. The simple solution to this is to just `React.useMemo()` the context value array/object before you pass it down, because it memoizes the array/object itself and so it won't trigger a re-render unless one of the individual values change.
+
+Another option would be to just use a separate context provider if the children components only need different parts of your context value. That way, when an individual context value changes, only the components that explicitly depend on that value would need to be re-rendered.
+
+> Another gotcha that almost got me in this exercise - Be mindful when trying to pass down values wrapped in an object like this:
+>
+> ```jsx
+> function AppProvider({ children }) {
+>   /*...*/
+>
+>   return (
+>     <AppStateContext.Provider value={{ state }}>
+>       <AppDispatchContext.Provider value={{ dispatch }}>
+>         {children}
+>       </AppDispatchContext.Provider>
+>     </AppStateContext.Provider>
+>   );
+> }
+> ```
+>
+> I ran through the Profiler tab in the React Devtools and it just gets back to the initial behavior where everything re-renders when the context provider re-renders.
+>
+> We'll want to pass the values directly instead like so:
+>
+> ```jsx
+> function AppProvider({ children }) {
+>   /*...*/
+>
+>   return (
+>     <AppStateContext.Provider value={state}>
+>       <AppDispatchContext.Provider value={dispatch}>
+>         {children}
+>       </AppDispatchContext.Provider>
+>     </AppStateContext.Provider>
+>   );
+> }
+> ```
+>
+> In hindsight, I guess the reason why the first example goes back to our unwanted initial behavior is because we're essentially mimicking the `const value = [state, dispatch]` assignment when we pass down the values wrapped in objects, because those objects _also get re-declared upon re-render and causes everything else to re-render anyway_ 😅
