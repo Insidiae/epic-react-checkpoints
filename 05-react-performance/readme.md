@@ -42,3 +42,9 @@ Another way to take advantage of memoization for React apps is to use `React.mem
 We can visualize this re-rendering process through the `Profiler` tab of the React Devtools, giving us more insight into what exactly triggers a re-render for each component, and perhaps optimize the ones that really don't necessarily need to be re-rendered that often.
 
 The Extra Credit exercises dive deeper into using `React.memo` by making use of a custom comparator function that helps `React.memo` tell whether to re-render the component depending on which props change. The second Extra Credit exercise also gives a word of caution with prematurely optimizing re-renders this way - If you find yourself needing to do some complicated calculations (such as comparing different object properties) just to figure out whether to re-render a component, it might be wiser to perform those calculations in the parent component and instead pass primitive values that can be compared more easily, and might even totally eliminate the need for these large and complicated comparator functions!
+
+### 4. Window large lists with react-virtual
+
+- [Exercise Solution](exercises/04.js)
+
+Sometimes we might receive a really large dataset containing tens of thousands of items to render and interact with. This obviously will cause performance issues simply due to the sheer amount of items we have to manage. We are introduced to the `react-virtual` library, which helps with "just-in-time" rendering only a small subset of our data, and display the appropriate items as the users navigate through the list. This gives the users the freedom to scroll through our tens of thousands of list items, but our component is now as performant as if it's only rendering 20-30 items at once (because it actually is)!
