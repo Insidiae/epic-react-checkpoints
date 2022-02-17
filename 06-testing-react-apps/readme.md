@@ -55,3 +55,16 @@ We are introduced to MSW, which is a tool for mocking server responses so we can
 We also test that our components display a proper error message when something goes wrong with the request (i.e. invalid inputs, unexpected server errors, etc.). We also make use of snapshot testing to avoid testing the implementation detail of the error message's text content, and instead simply compare it with an automatically generated snapshot provided by Jest.
 
 We also test unexpected server errors by using a custom one-off server handler that is only used by our test, and then simply test the error message that gets thrown by the custom handler.
+
+### 6. Mocking Browser APIs and modules
+
+- [Exercise Solution](exercises/06.js)
+- 💯 Extra Credit
+  1. [Mock the module](exercises/06.extra-1.js)
+  2. Test the unhappy path
+     - [Function mocking approach](exercises/06.extra-2a.js)
+     - [Module mocking approach](exercises/06.extra-2b.js)
+
+In this exercise, we learned the limitations of the jsdom API that our tests use, and so we have to mock the implementation of some browser APIs that are not available with jsdom.
+
+We also work with two different approaches for mocking these kinds of APIs. The first is to directly mock the browser API that will be used by our tests via `jest.fn`, and then adding a mock implementation via `mockFn.mockImplementation` that provides the outputs that our tests expect. Alternatively, we can mock the module that uses the browser API via `jest.mock`, then use `mockFn.mockImplementation` to provide the same expected outputs.
