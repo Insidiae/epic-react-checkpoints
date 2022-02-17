@@ -68,3 +68,13 @@ We also test unexpected server errors by using a custom one-off server handler t
 In this exercise, we learned the limitations of the jsdom API that our tests use, and so we have to mock the implementation of some browser APIs that are not available with jsdom.
 
 We also work with two different approaches for mocking these kinds of APIs. The first is to directly mock the browser API that will be used by our tests via `jest.fn`, and then adding a mock implementation via `mockFn.mockImplementation` that provides the outputs that our tests expect. Alternatively, we can mock the module that uses the browser API via `jest.mock`, then use `mockFn.mockImplementation` to provide the same expected outputs.
+
+### 7. Testing with context and a custom render method
+
+- [Exercise Solution](exercises/07.js)
+- 💯 Extra Credit
+  1. [Add a test for the dark theme](exercises/07.extra-1.js)
+  2. [Create a custom render method](exercises/07.extra-2.js)
+  3. [Swap @testing-library/react with app test utils](exercises/07.extra-3.js)
+
+This is a short and sweet exercise. We basically just extend React Testing Library's `render` method to include a `wrapper` option with a component that contains all of our context providers so we won't have to redeclare them every time we want to render components that consume from those providers. We can also provide additional options to the wrapper component so we can pass along additional props (such as initial values) to the context providers. As a bonus, we can even move this custom render method into a separate file which we can reuse for other tests that make use of the same context providers!
