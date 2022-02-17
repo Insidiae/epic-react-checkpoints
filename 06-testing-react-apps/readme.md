@@ -1,0 +1,11 @@
+# Testing React Apps 🧐
+
+## Exercises
+
+### 1. Simple test with ReactDOM
+
+- [Exercise Solution](exercises/01.js)
+- 💯 Extra Credit
+  1. [Use dispatchEvent](exercises/01.extra-1.js)
+
+We go through the basics of testing React elements. First, we manually render the element via ReactDOM, select the elements that are relevant for our tests, fire off events to mimic how a user might interact with the component we are testing (such as button clicks), then assert the changes we expect to happen (such as checking whether we display the correct text after firing off the events we did earlier). Finally, we also are reminded to clean up the DOM after each test so as to not interfere with other tests.
