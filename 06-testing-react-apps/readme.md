@@ -40,3 +40,18 @@ To help avoid testing implementation details, React Testing Library provides us 
 This exercise demonstrates the basic workflow for testing form components. We are also introduced to Jest mock functions (also called _spies_), which lets us track how the form's submit handler is called without needing to know the actual implementation of the submit handler.
 
 The Extra Credit exercises also emphasizes some communication etiquettes when writing these kinds of tests, and further emphasizes moving away from implementation details by generating random data for the form input fields if the test shouldn't actually care about the fields having some specific values, and allowing overrides for the function that generates our input data whenever we might want to add our own constraints or even have specific values for certain inputs.
+
+### 5. Mocking HTTP requests
+
+- [Exercise Solution](exercises/05.js)
+- 💯 Extra Credit
+  1. [Reuse server request handlers](exercises/05.extra-1.js)
+  2. [Test the unhappy path](exercises/05.extra-2.js)
+  3. [Use inline snapshots for error messages](exercises/05.extra-3.js)
+  4. [Use one-off server handlers](exercises/05.extra-4.js)
+
+We are introduced to MSW, which is a tool for mocking server responses so we can test that our code properly interacts with the backend. With MSW, we can even setup a mock server and reuse the same setup for development and testing.
+
+We also test that our components display a proper error message when something goes wrong with the request (i.e. invalid inputs, unexpected server errors, etc.). We also make use of snapshot testing to avoid testing the implementation detail of the error message's text content, and instead simply compare it with an automatically generated snapshot provided by Jest.
+
+We also test unexpected server errors by using a custom one-off server handler that is only used by our test, and then simply test the error message that gets thrown by the custom handler.
