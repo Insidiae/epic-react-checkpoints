@@ -27,3 +27,16 @@ Building off the first example, we now use React Testing Library to have a much 
 We do some more refactors from the previous example by making sure our tests are resilient enough and not care about implementation details (such as how the React component is structured, for example, or even miniscule details like capitalizations).
 
 To help avoid testing implementation details, React Testing Library provides us some useful methods such as `screen` queries to accurately get the relevant components, and `userEvent` to better mimic the actual browser events that the average user would fire off when interacting with the component we are testing.
+
+### 4. Form testing
+
+- [Exercise Solution](exercises/04.js)
+- 💯 Extra Credit
+  1. [Use a jest mock function](exercises/04.extra-1.js)
+  2. [Generate test data](exercises/04.extra-2.js)
+  3. [Allow for overrides](exercises/04.extra-3.js)
+  4. [Use Test Data Bot](exercises/04.extra-4.js)
+
+This exercise demonstrates the basic workflow for testing form components. We are also introduced to Jest mock functions (also called _spies_), which lets us track how the form's submit handler is called without needing to know the actual implementation of the submit handler.
+
+The Extra Credit exercises also emphasizes some communication etiquettes when writing these kinds of tests, and further emphasizes moving away from implementation details by generating random data for the form input fields if the test shouldn't actually care about the fields having some specific values, and allowing overrides for the function that generates our input data whenever we might want to add our own constraints or even have specific values for certain inputs.
