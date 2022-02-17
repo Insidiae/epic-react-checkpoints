@@ -78,3 +78,21 @@ We also work with two different approaches for mocking these kinds of APIs. The 
   3. [Swap @testing-library/react with app test utils](exercises/07.extra-3.js)
 
 This is a short and sweet exercise. We basically just extend React Testing Library's `render` method to include a `wrapper` option with a component that contains all of our context providers so we won't have to redeclare them every time we want to render components that consume from those providers. We can also provide additional options to the wrapper component so we can pass along additional props (such as initial values) to the context providers. As a bonus, we can even move this custom render method into a separate file which we can reuse for other tests that make use of the same context providers!
+
+### 8. Testing custom hooks
+
+- [Exercise Solution](exercises/08.js)
+- 💯 Extra Credit
+  1. [Fake component](exercises/08.extra-1.js)
+  2. [Setup function](exercises/08.extra-2.js)
+  3. [Using react-hooks testing library](exercises/08.extra-3.js)
+
+This exercise explores some different options for testing custom React Hooks.
+
+For most custom React Hooks that we write ourselves, the best way to test these hooks would be to test the components that use these hooks. That would usually give us 100% coverage if the component fully utilizes the hooks. Alternatively, we can also create an example component for testing purposes that just uses the hook, and test that example component instead.
+
+For more complex hooks, usually for highly reusable hooks and/or hooks that are part of a popular open-source library, it might be a good idea to setup some fake component that gets the values returned by the hook, which we can then test directly just like a regular function return values (note that we'll have to wrap the state changing calls in `act` if we do this approach).
+
+When testing hooks this way, we might also want to abstract the common logic (such as getting the hook's return values) into a reusable `setup` function. We can the use that `setup` function in multiple different tests to account for different edge cases for the hook.
+
+The Testing Library team actually recognizes this pattern, and so they provided us these testing utilities via `react-hooks-testing-library` that work similar to our `setup` function to let us test our react hooks using this approach while maintaining best practices!
