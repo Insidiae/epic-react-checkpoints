@@ -163,3 +163,13 @@ Same concepts as the `main` branch counterpart, but the Extra Credit exercises s
   3. [Swap @testing-library/react with app test utils](next/07.extra-3.tsx)
 
 Again, pretty much the same as the `main` branch counterpart.
+
+### 8. Testing custom hooks
+
+- [Exercise Solution](next/08.tsx)
+- 💯 Extra Credit
+  1. [Fake component](next/08.extra-1.tsx)
+  2. [Setup function](next/08.extra-2.tsx)
+  3. [Using react-hooks testing library](next/08.extra-3.tsx)
+
+Same concepts as the `main` branch counterpart, though take note of how we can use `Parameters<typeof someFunction>` and `ReturnType<typeof someFunction>` to get type definitions for the parameters and return types of the functions that we imported (such as the `useCounter` hook in this example), if we can't find any predefined types for such parameters/props and/or return values.
