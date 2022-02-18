@@ -101,8 +101,16 @@ The Testing Library team actually recognizes this pattern, and so they provided 
 
 ### 1. Simple test with ReactDOM
 
-- [Exercise Solution](next/01.js)
+- [Exercise Solution](next/01.tsx)
 - 💯 Extra Credit
-  1. [Use dispatchEvent](next/01.extra-1.js)
+  1. [Use dispatchEvent](next/01.extra-1.tsx)
 
 Pretty much the same as the `main` branch counterpart, though TypeScript is a bit stricter when dealing with DOM nodes like we do in this exercise.
+
+### 2. Simple test with React Testing Library
+
+- [Exercise Solution](next/02.tsx)
+- 💯 Extra Credit
+  1. [Use @testing-library/jest-dom](next/02.extra-1.tsx)
+
+Again, pretty much the same as the `main` branch counterpart.
