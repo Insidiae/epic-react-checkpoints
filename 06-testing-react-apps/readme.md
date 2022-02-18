@@ -122,3 +122,14 @@ Again, pretty much the same as the `main` branch counterpart.
   1. [Use userEvent](next/03.extra-1.tsx)
 
 Yep, still exactly the same as the `main` branch counterpart.
+
+### 4. Form testing
+
+- [Exercise Solution](next/04.tsx)
+- 💯 Extra Credit
+  1. [Use a jest mock function](next/04.extra-1.tsx)
+  2. [Generate test data](next/04.extra-2.tsx)
+  3. [Allow for overrides](next/04.extra-3.tsx)
+  4. [Use Test Data Bot](next/04.extra-4.tsx)
+
+Same as the `main` branch counterpart, though now we can use TypeScript annotations for better type safety.
