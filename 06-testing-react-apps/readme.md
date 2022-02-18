@@ -96,3 +96,13 @@ For more complex hooks, usually for highly reusable hooks and/or hooks that are 
 When testing hooks this way, we might also want to abstract the common logic (such as getting the hook's return values) into a reusable `setup` function. We can the use that `setup` function in multiple different tests to account for different edge cases for the hook.
 
 The Testing Library team actually recognizes this pattern, and so they provided us these testing utilities via `react-hooks-testing-library` that work similar to our `setup` function to let us test our react hooks using this approach while maintaining best practices!
+
+## `next` Branch Exercises
+
+### 1. Simple test with ReactDOM
+
+- [Exercise Solution](next/01.js)
+- 💯 Extra Credit
+  1. [Use dispatchEvent](next/01.extra-1.js)
+
+Pretty much the same as the `main` branch counterpart, though TypeScript is a bit stricter when dealing with DOM nodes like we do in this exercise.
