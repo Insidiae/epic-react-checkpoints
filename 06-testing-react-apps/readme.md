@@ -96,3 +96,80 @@ For more complex hooks, usually for highly reusable hooks and/or hooks that are 
 When testing hooks this way, we might also want to abstract the common logic (such as getting the hook's return values) into a reusable `setup` function. We can the use that `setup` function in multiple different tests to account for different edge cases for the hook.
 
 The Testing Library team actually recognizes this pattern, and so they provided us these testing utilities via `react-hooks-testing-library` that work similar to our `setup` function to let us test our react hooks using this approach while maintaining best practices!
+
+## `next` Branch Exercises
+
+### 1. Simple test with ReactDOM
+
+- [Exercise Solution](next/01.tsx)
+- 💯 Extra Credit
+  1. [Use dispatchEvent](next/01.extra-1.tsx)
+
+Pretty much the same as the `main` branch counterpart, though TypeScript is a bit stricter when dealing with DOM nodes like we do in this exercise.
+
+### 2. Simple test with React Testing Library
+
+- [Exercise Solution](next/02.tsx)
+- 💯 Extra Credit
+  1. [Use @testing-library/jest-dom](next/02.extra-1.tsx)
+
+Again, pretty much the same as the `main` branch counterpart.
+
+### 3. Avoid implementation details
+
+- [Exercise Solution](next/03.tsx)
+- 💯 Extra Credit
+  1. [Use userEvent](next/03.extra-1.tsx)
+
+Yep, still exactly the same as the `main` branch counterpart.
+
+### 4. Form testing
+
+- [Exercise Solution](next/04.tsx)
+- 💯 Extra Credit
+  1. [Use a jest mock function](next/04.extra-1.tsx)
+  2. [Generate test data](next/04.extra-2.tsx)
+  3. [Allow for overrides](next/04.extra-3.tsx)
+  4. [Use Test Data Bot](next/04.extra-4.tsx)
+
+Same as the `main` branch counterpart, though now we can use TypeScript annotations for better type safety.
+
+### 5. Mocking HTTP requests
+
+- [Exercise Solution](next/05.tsx)
+- 💯 Extra Credit
+  1. [Reuse server request handlers](next/05.extra-1.tsx)
+  2. [Test the unhappy path](next/05.extra-2.tsx)
+  3. [Use inline snapshots for error messages](next/05.extra-3.tsx)
+  4. [Use one-off server handlers](next/05.extra-4.tsx)
+
+Still the same as the `main` branch counterpart 😅
+
+### 6. Mocking Browser APIs and modules
+
+- [Exercise Solution](next/06.tsx)
+- 💯 Extra Credit
+  1. [Test the unhappy path](next/06.extra-1.tsx)
+  2. [Mock the module](next/06.extra-2.tsx)
+
+Same concepts as the `main` branch counterpart, but the Extra Credit exercises swapped positions so we don't need two different files for the `Test the unhappy path` test. I can also use the new Extra Credit 2 as a basis to fix up [my alternate implementation](exercises/06.extra-2b.js) for the main branch Extra Credit as well!
+
+### 7. Testing with context and a custom render method
+
+- [Exercise Solution](next/07.tsx)
+- 💯 Extra Credit
+  1. [Add a test for the dark theme](next/07.extra-1.tsx)
+  2. [Create a custom render method](next/07.extra-2.tsx)
+  3. [Swap @testing-library/react with app test utils](next/07.extra-3.tsx)
+
+Again, pretty much the same as the `main` branch counterpart.
+
+### 8. Testing custom hooks
+
+- [Exercise Solution](next/08.tsx)
+- 💯 Extra Credit
+  1. [Fake component](next/08.extra-1.tsx)
+  2. [Setup function](next/08.extra-2.tsx)
+  3. [Using react-hooks testing library](next/08.extra-3.tsx)
+
+Same concepts as the `main` branch counterpart, though take note of how we can use `Parameters<typeof someFunction>` and `ReturnType<typeof someFunction>` to get type definitions for the parameters and return types of the functions that we imported (such as the `useCounter` hook in this example), if we can't find any predefined types for such parameters/props and/or return values.
