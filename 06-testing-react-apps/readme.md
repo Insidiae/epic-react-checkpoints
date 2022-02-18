@@ -133,3 +133,14 @@ Yep, still exactly the same as the `main` branch counterpart.
   4. [Use Test Data Bot](next/04.extra-4.tsx)
 
 Same as the `main` branch counterpart, though now we can use TypeScript annotations for better type safety.
+
+### 5. Mocking HTTP requests
+
+- [Exercise Solution](next/05.tsx)
+- 💯 Extra Credit
+  1. [Reuse server request handlers](next/05.extra-1.tsx)
+  2. [Test the unhappy path](next/05.extra-2.tsx)
+  3. [Use inline snapshots for error messages](next/05.extra-3.tsx)
+  4. [Use one-off server handlers](next/05.extra-4.tsx)
+
+Still the same as the `main` branch counterpart 😅
