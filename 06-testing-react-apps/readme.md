@@ -114,3 +114,11 @@ Pretty much the same as the `main` branch counterpart, though TypeScript is a bi
   1. [Use @testing-library/jest-dom](next/02.extra-1.tsx)
 
 Again, pretty much the same as the `main` branch counterpart.
+
+### 3. Avoid implementation details
+
+- [Exercise Solution](next/03.tsx)
+- 💯 Extra Credit
+  1. [Use userEvent](next/03.extra-1.tsx)
+
+Yep, still exactly the same as the `main` branch counterpart.
