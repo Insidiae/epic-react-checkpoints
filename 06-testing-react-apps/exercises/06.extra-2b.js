@@ -8,17 +8,6 @@ import Location from "../../examples/location";
 
 jest.mock("react-use-geolocation");
 
-let setReturnValue;
-function useMockCurrentPosition() {
-  const state = React.useState([]);
-  setReturnValue = state[1];
-  return state[0];
-}
-
-afterEach(() => {
-  setReturnValue = null;
-});
-
 test("displays the users current location", async () => {
   const fakePosition = {
     coords: {
@@ -26,6 +15,13 @@ test("displays the users current location", async () => {
       longitude: 139,
     },
   };
+
+  let setReturnValue;
+  function useMockCurrentPosition() {
+    const state = React.useState([]);
+    setReturnValue = state[1];
+    return state[0];
+  }
 
   useCurrentPosition.mockImplementation(useMockCurrentPosition);
 
@@ -52,6 +48,13 @@ test("displays error message when geolocation is not supported", async () => {
   const fakeError = new Error(
     "Geolocation is not supported or permission denied"
   );
+
+  let setReturnValue;
+  function useMockCurrentPosition() {
+    const state = React.useState([]);
+    setReturnValue = state[1];
+    return state[0];
+  }
 
   useCurrentPosition.mockImplementation(useMockCurrentPosition);
 

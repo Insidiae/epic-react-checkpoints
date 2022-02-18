@@ -144,3 +144,12 @@ Same as the `main` branch counterpart, though now we can use TypeScript annotati
   4. [Use one-off server handlers](next/05.extra-4.tsx)
 
 Still the same as the `main` branch counterpart 😅
+
+### 6. Mocking Browser APIs and modules
+
+- [Exercise Solution](next/06.tsx)
+- 💯 Extra Credit
+  1. [Test the unhappy path](next/06.extra-1.tsx)
+  2. [Mock the module](next/06.extra-2.tsx)
+
+Same concepts as the `main` branch counterpart, but the Extra Credit exercises swapped positions so we don't need two different files for the `Test the unhappy path` test. I can also use the new Extra Credit 2 as a basis to fix up [my alternate implementation](exercises/06.extra-2b.js) for the main branch Extra Credit as well!
