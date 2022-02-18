@@ -153,3 +153,13 @@ Still the same as the `main` branch counterpart 😅
   2. [Mock the module](next/06.extra-2.tsx)
 
 Same concepts as the `main` branch counterpart, but the Extra Credit exercises swapped positions so we don't need two different files for the `Test the unhappy path` test. I can also use the new Extra Credit 2 as a basis to fix up [my alternate implementation](exercises/06.extra-2b.js) for the main branch Extra Credit as well!
+
+### 7. Testing with context and a custom render method
+
+- [Exercise Solution](next/07.tsx)
+- 💯 Extra Credit
+  1. [Add a test for the dark theme](next/07.extra-1.tsx)
+  2. [Create a custom render method](next/07.extra-2.tsx)
+  3. [Swap @testing-library/react with app test utils](next/07.extra-3.tsx)
+
+Again, pretty much the same as the `main` branch counterpart.
