@@ -46,3 +46,12 @@ We are introduced to an experimental React hook called `useTransition`, which im
   3. [Add cache timeout](exercises/04.extra-3.js)
 
 We further improve the user experience for the Pokemon example app by adding the ability to cache the data we fetch from the API so that the user won't need to re-fetch a Pokemon they've already viewed before. We also take advantage of React Context to improve our control of the cached data and add some basic cache invalidation strategy.
+
+### 5. Suspense Image
+
+- [Exercise Solution](exercises/05.js)
+- 💯 Extra Credit
+  1. [Avoid waterfall](exercises/05.extra-1.js)
+  2. [Render as you Fetch](exercises/05.extra-2.js)
+
+React's experimental Suspense API is not only limited to fetching data from API, we can actually use the exact same concepts and preload images at the same time we fetch our data (as long as we have some way to get the image's `src` URL from the request parameters)!.With this, we can fully utilize the "Render as you fetch" strategy to fetch our lazily-loaded code, the data from the API, and the images to be displayed, all at the same time!
