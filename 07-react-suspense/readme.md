@@ -55,3 +55,11 @@ We further improve the user experience for the Pokemon example app by adding the
   2. [Render as you Fetch](exercises/05.extra-2.js)
 
 React's experimental Suspense API is not only limited to fetching data from API, we can actually use the exact same concepts and preload images at the same time we fetch our data (as long as we have some way to get the image's `src` URL from the request parameters)!.With this, we can fully utilize the "Render as you fetch" strategy to fetch our lazily-loaded code, the data from the API, and the images to be displayed, all at the same time!
+
+### 6. Suspense with a custom hook
+
+- [Exercise Solution](exercises/06.js)
+- 💯 Extra Credit
+  1. [Use the usePokemonResource pre-built hook](exercises/06.extra-1.js)
+
+As with regular React hooks, we can abstract away this experimental Suspense API logic into a reusable custom hook. Plus, we can even extract these custom hook into a separate file and keep the actual component files minimal!
