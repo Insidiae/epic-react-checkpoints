@@ -31,8 +31,18 @@ In this exercise, we make some refactors to our code that leverages React's expe
 - [Exercise Solution](exercises/03.js)
 - 💯 Extra Credit
   1. [Use CSS transitions](exercises/03.extra-1.js)
-  2. [Avoid flash of loading content](exercises/03.extra-1.js)
+  2. [Avoid flash of loading content](exercises/03.extra-2.js)
 
 > 📣 **BREAKING CHANGE ALERT:** The version of React in this project works like it does in the recorded videos. However in the future experimental builds of React, the `SUSPENSE_CONFIG` option to `useTransition` has been completely removed. Read more about this here: https://github.com/facebook/react/pull/19703
 
 We are introduced to an experimental React hook called `useTransition`, which improves the loading experience for our users by providing a mechanism to control what happens when a suspending component needs to be updated (such as when making fetch calls), and providing an `isPending` state that we can use to indicate to the user that our component is currently in a loading state. We can also tweak some settings to further improve the user experience by delaying the display of the loading state for a specified amount of time so that users with fast network speeds need not even see the loading state at all.
+
+### 4. Cache resources
+
+- [Exercise Solution](exercises/04.js)
+- 💯 Extra Credit
+  1. [Put cache in context](exercises/04.extra-1.js)
+  2. [Create a context provider](exercises/04.extra-2.js)
+  3. [Add cache timeout](exercises/04.extra-3.js)
+
+We further improve the user experience for the Pokemon example app by adding the ability to cache the data we fetch from the API so that the user won't need to re-fetch a Pokemon they've already viewed before. We also take advantage of React Context to improve our control of the cached data and add some basic cache invalidation strategy.
