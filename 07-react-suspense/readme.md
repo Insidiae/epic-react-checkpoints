@@ -63,3 +63,9 @@ React's experimental Suspense API is not only limited to fetching data from API,
   1. [Use the usePokemonResource pre-built hook](exercises/06.extra-1.js)
 
 As with regular React hooks, we can abstract away this experimental Suspense API logic into a reusable custom hook. Plus, we can even extract these custom hook into a separate file and keep the actual component files minimal!
+
+### 7. Coordinate Suspending components with SuspenseList
+
+- [Exercise Solution](exercises/07.js)
+
+A short and sweet exercise that demonstrates how `React.SuspenseList` can help us build a nice loading experience for apps with complex UIs that involve several lazily-loaded components by grouping these lazily-loaded components together, nesting `React.SuspenseList`s as needed, and coordinating their loading states in a way that would not be jarring for the users of the app.
