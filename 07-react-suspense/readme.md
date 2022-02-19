@@ -25,3 +25,14 @@ The examples demonstrate three different options for fetching+rendering data: Th
 The "Render as you fetch" method discussed in this exercise solves exactly this problem, since you can make the request for the code _and_ make a request for the data at the same time.
 
 In this exercise, we make some refactors to our code that leverages React's experimental Suspense API to massively clean up the components that render the fetched data.
+
+### 3. useTransition for improved loading states
+
+- [Exercise Solution](exercises/03.js)
+- 💯 Extra Credit
+  1. [Use CSS transitions](exercises/03.extra-1.js)
+  2. [Avoid flash of loading content](exercises/03.extra-1.js)
+
+> 📣 **BREAKING CHANGE ALERT:** The version of React in this project works like it does in the recorded videos. However in the future experimental builds of React, the `SUSPENSE_CONFIG` option to `useTransition` has been completely removed. Read more about this here: https://github.com/facebook/react/pull/19703
+
+We are introduced to an experimental React hook called `useTransition`, which improves the loading experience for our users by providing a mechanism to control what happens when a suspending component needs to be updated (such as when making fetch calls), and providing an `isPending` state that we can use to indicate to the user that our component is currently in a loading state. We can also tweak some settings to further improve the user experience by delaying the display of the loading state for a specified amount of time so that users with fast network speeds need not even see the loading state at all.
