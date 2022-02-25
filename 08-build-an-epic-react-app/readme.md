@@ -51,3 +51,23 @@ We now add Authentication to the Bookshelf app using JWT tokens provided from an
   2. [Add `useMatch` to highlight the active nav item](exercises/05/extra-2/)
 
 We now add routing to the Bookshelf app using React Router. React Router is a de-facto standard routing library for React applications, letting us easily and declaratively define a list of routes that render different "pages" (really just regular React components), and can even change the look of certain components depending on the URL. We also add multiple ways to handle redirects, both for local development and production deployment using Netlify.
+
+### 6. Cache Management
+
+- [Exercise Solution](exercises/06/exercise/)
+- 💯 Extra Credit
+  1. [Make hooks](exercises/06/extra-1/)
+  2. [Wrap the `<App />` in a `<ReactQueryConfigProvider />`](exercises/06/extra-2/)
+  3. [Handle mutation errors properly](exercises/06/extra-3/)
+  4. [Add a loading spinner for the notes](exercises/06/extra-4/)
+  5. [Prefetch the book search query](exercises/06/extra-5/)
+  6. [Add books to the query cache](exercises/06/extra-6/)
+  7. [Add optimistic updates and recovery](exercises/06/extra-7/)
+
+We use a library called React Query that provides some nice abstractions for handling data that comes from our server. We start by replacing some of our `useAsync` calls dealing with fetching data from the server to instead use React Query's `useQuery` hook. We also use React Query's `useMutation` hook to add more features (reading list, notes, and ratings) to the Bookshelf app.
+
+We also demonstrate the power of custom React hooks by cleaning up massive chunks of reused hook and abstracting them into their own custom hooks. This also prevents bugs that may arise from improperly calling React Query's hooks with the wrong parameters.
+
+Incidentally, React Query also comes with many of the same booleans we might know from `useAsync`, which also lets us display loading spinners while the request is pending, or display the appropriate error when the request fails.
+
+We can also take advantage of React Query's `queryCache` feature to provide a much smoother experience for the Bookshelf users. Using the `queryCache`, we can prefetch queries so that loading the books on the discover list appears instant for the user, and also instantly display changes (if any) if the user navigates back to the book search list after viewing a specific book. We can also use `queryCache` to skip the loading process for individual books, given that the book data is already provided to us via the book search and reading list queries. Finally, we also explore adding optimistic UI for React Query mutations so that state updates feel instant for the user, yet we can also roll back to the previous state if the request somehow fails.
