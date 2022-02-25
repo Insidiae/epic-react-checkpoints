@@ -29,3 +29,16 @@ We now add styles to the Bookshelf app via CSS-in-JS with the help of the Emotio
   2. [Use the useAsync hook](exercises/03/extra-2/)
 
 We make use of the `window.fetch` API to make HTTP requests when the Bookshelf users search for a book. We then leverage the power of React Hooks to handle the data returned from the server, and we also explore handling errors in our HTTP requests as well. This exercise also demonstrates a practical application of the `useAsync` custom hook featured in previous workshops, massively simplifying the code we write for handling these HTTP requests.
+
+## Part 2
+
+### 4. Authentication
+
+- [Exercise Solution](exercises/04/exercise/)
+- 💯 Extra Credit
+  1. [Load the user's data on page load](exercises/04/extra-1/)
+  2. [Use `useAsync`](exercises/04/extra-2/)
+  3. [Automatically logout on 401](exercises/04/extra-3/)
+  4. [Support posting data](exercises/04/extra-4/)
+
+We now add Authentication to the Bookshelf app using JWT tokens provided from an auth provider API. Leveraging the power of our `useAsync` hook, we can easily add some nice handlers to automatically fetch user data upon loading the page. We also improve our API client code a bit to support handling expired/invalid tokens and support `POST`ing data with the client as well.
