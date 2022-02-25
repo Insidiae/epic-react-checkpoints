@@ -42,3 +42,12 @@ We make use of the `window.fetch` API to make HTTP requests when the Bookshelf u
   4. [Support posting data](exercises/04/extra-4/)
 
 We now add Authentication to the Bookshelf app using JWT tokens provided from an auth provider API. Leveraging the power of our `useAsync` hook, we can easily add some nice handlers to automatically fetch user data upon loading the page. We also improve our API client code a bit to support handling expired/invalid tokens and support `POST`ing data with the client as well.
+
+### 5. Routing
+
+- [Exercise Solution](exercises/05/exercise/)
+- 💯 Extra Credit
+  1. [Handle URL redirects](exercises/05/extra-1/)
+  2. [Add `useMatch` to highlight the active nav item](exercises/05/extra-2/)
+
+We now add routing to the Bookshelf app using React Router. React Router is a de-facto standard routing library for React applications, letting us easily and declaratively define a list of routes that render different "pages" (really just regular React components), and can even change the look of certain components depending on the URL. We also add multiple ways to handle redirects, both for local development and production deployment using Netlify.
