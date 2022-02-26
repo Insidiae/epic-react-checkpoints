@@ -97,3 +97,16 @@ We also use custom hooks to clean things up even further by moving the context-c
 We make use of the (Flexible) Compound Components pattern in the Bookshelf app by abstracting the login/register form modal into a more reusable Modal component. The new Modal component is not only more customizable, it also abstracts away the handling of its `isOpen` state.
 
 We also provide further abstractions for the more common use cases by genericizing the previous `ModalContents` component into a `ModalContentsBase` (for users who might want a different use case), and instead provide a new `ModalContents` component with the commonly-used components built-in.
+
+### 9. Performance
+
+- [Exercise Solution](exercises/09/exercise/)
+- 💯 Extra Credit
+  1. [Prefetch the Authenticated App](exercises/09/extra-1/)
+  2. [Memoize context](exercises/09/extra-2/)
+  3. [Production Monitoring](exercises/09/extra-3/)
+  4. [Add interaction tracing](exercises/09/extra-4/)
+
+We add some performance enhancements to the Bookshelf app by lazy-loading the app components, prefetching the authenticated app component, and memoizing the auth context values.
+
+We also use `React.Profiler` to monitor different parts of the Bookshelf app and send relevant data to the backend server, and enable profiling in the production builds as well. We also make use of the experimental interaction tracing API to help determine the interactions that are involved in the profiled data.
