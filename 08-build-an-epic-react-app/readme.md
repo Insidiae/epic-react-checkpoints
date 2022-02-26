@@ -86,3 +86,14 @@ We can also take advantage of React Query's `queryCache` feature to provide a mu
 We improve the Authentication API for the Bookshelf app by extracting the authentication-related code into a separate React Context. This reduces the amount of prop drilling within the app, and ensures that only the components that actually need to deal with authentication code makes use of the context.
 
 We also use custom hooks to clean things up even further by moving the context-consuming code into a custom hook, and abstracting authenticated API calls into another custom hook.
+
+### 8. Compound Components
+
+- [Exercise Solution](exercises/08/exercise/)
+- 💯 Extra Credit
+  1. [Add `callAll`](exercises/08/extra-1/)
+  2. [Create ModalContentsBase](exercises/08/extra-2/)
+
+We make use of the (Flexible) Compound Components pattern in the Bookshelf app by abstracting the login/register form modal into a more reusable Modal component. The new Modal component is not only more customizable, it also abstracts away the handling of its `isOpen` state.
+
+We also provide further abstractions for the more common use cases by genericizing the previous `ModalContents` component into a `ModalContentsBase` (for users who might want a different use case), and instead provide a new `ModalContents` component with the commonly-used components built-in.
