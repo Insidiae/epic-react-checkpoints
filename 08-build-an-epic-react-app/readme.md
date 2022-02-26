@@ -71,3 +71,52 @@ We also demonstrate the power of custom React hooks by cleaning up massive chunk
 Incidentally, React Query also comes with many of the same booleans we might know from `useAsync`, which also lets us display loading spinners while the request is pending, or display the appropriate error when the request fails.
 
 We can also take advantage of React Query's `queryCache` feature to provide a much smoother experience for the Bookshelf users. Using the `queryCache`, we can prefetch queries so that loading the books on the discover list appears instant for the user, and also instantly display changes (if any) if the user navigates back to the book search list after viewing a specific book. We can also use `queryCache` to skip the loading process for individual books, given that the book data is already provided to us via the book search and reading list queries. Finally, we also explore adding optimistic UI for React Query mutations so that state updates feel instant for the user, yet we can also roll back to the previous state if the request somehow fails.
+
+## Part 3
+
+### 7. Context
+
+- [Exercise Solution](exercises/07/exercise/)
+- 💯 Extra Credit
+  1. [Create a `useAuth` hook](exercises/07/extra-1/)
+  2. [Create an `AuthProvider` component](exercises/07/extra-2/)
+  3. [Colocate global providers](exercises/07/extra-3/)
+  4. [Create a `useClient` hook](exercises/07/extra-4/)
+
+We improve the Authentication API for the Bookshelf app by extracting the authentication-related code into a separate React Context. This reduces the amount of prop drilling within the app, and ensures that only the components that actually need to deal with authentication code makes use of the context.
+
+We also use custom hooks to clean things up even further by moving the context-consuming code into a custom hook, and abstracting authenticated API calls into another custom hook.
+
+### 8. Compound Components
+
+- [Exercise Solution](exercises/08/exercise/)
+- 💯 Extra Credit
+  1. [Add `callAll`](exercises/08/extra-1/)
+  2. [Create ModalContentsBase](exercises/08/extra-2/)
+
+We make use of the (Flexible) Compound Components pattern in the Bookshelf app by abstracting the login/register form modal into a more reusable Modal component. The new Modal component is not only more customizable, it also abstracts away the handling of its `isOpen` state.
+
+We also provide further abstractions for the more common use cases by genericizing the previous `ModalContents` component into a `ModalContentsBase` (for users who might want a different use case), and instead provide a new `ModalContents` component with the commonly-used components built-in.
+
+### 9. Performance
+
+- [Exercise Solution](exercises/09/exercise/)
+- 💯 Extra Credit
+  1. [Prefetch the Authenticated App](exercises/09/extra-1/)
+  2. [Memoize context](exercises/09/extra-2/)
+  3. [Production Monitoring](exercises/09/extra-3/)
+  4. [Add interaction tracing](exercises/09/extra-4/)
+
+We add some performance enhancements to the Bookshelf app by lazy-loading the app components, prefetching the authenticated app component, and memoizing the auth context values.
+
+We also use `React.Profiler` to monitor different parts of the Bookshelf app and send relevant data to the backend server, and enable profiling in the production builds as well. We also make use of the experimental interaction tracing API to help determine the interactions that are involved in the profiled data.
+
+### 10. Render as you fetch
+
+- [Exercise Solution](exercises/10/exercise/)
+- 💯 Extra Credit
+  1. [Preload all initial data](exercises/10/extra-1/)
+
+We provide an even smoother loading experience for the Bookshelf users by preloading the user data while the page renders. This is done by simply moving the user data request from inside the `useEffect` call to just outside the `AuthProvider` function. This can be done because the user data request doesn't actually need any data from the `AuthProvider` to start fetching the user data, so we can move the request outside the function so it can be run before the `useEffect` callbacks are even called!
+
+React Query also provides tools to improve things further by also fetching the list items and setting them into the query cache, and those requests can be done at the same time as the page is rendering so that the list items are instantly there as soon as the page finishes rendering. With a little help from Bookshelf's backend engineers, we can combine the user data request and the reading list item request into a single request to a special endpoint that returns both of those data at once!
