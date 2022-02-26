@@ -110,3 +110,13 @@ We also provide further abstractions for the more common use cases by genericizi
 We add some performance enhancements to the Bookshelf app by lazy-loading the app components, prefetching the authenticated app component, and memoizing the auth context values.
 
 We also use `React.Profiler` to monitor different parts of the Bookshelf app and send relevant data to the backend server, and enable profiling in the production builds as well. We also make use of the experimental interaction tracing API to help determine the interactions that are involved in the profiled data.
+
+### 10. Render as you fetch
+
+- [Exercise Solution](exercises/10/exercise/)
+- 💯 Extra Credit
+  1. [Preload all initial data](exercises/10/extra-1/)
+
+We provide an even smoother loading experience for the Bookshelf users by preloading the user data while the page renders. This is done by simply moving the user data request from inside the `useEffect` call to just outside the `AuthProvider` function. This can be done because the user data request doesn't actually need any data from the `AuthProvider` to start fetching the user data, so we can move the request outside the function so it can be run before the `useEffect` callbacks are even called!
+
+React Query also provides tools to improve things further by also fetching the list items and setting them into the query cache, and those requests can be done at the same time as the page is rendering so that the list items are instantly there as soon as the page finishes rendering. With a little help from Bookshelf's backend engineers, we can combine the user data request and the reading list item request into a single request to a special endpoint that returns both of those data at once!
