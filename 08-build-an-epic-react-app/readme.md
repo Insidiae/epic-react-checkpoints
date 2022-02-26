@@ -71,3 +71,18 @@ We also demonstrate the power of custom React hooks by cleaning up massive chunk
 Incidentally, React Query also comes with many of the same booleans we might know from `useAsync`, which also lets us display loading spinners while the request is pending, or display the appropriate error when the request fails.
 
 We can also take advantage of React Query's `queryCache` feature to provide a much smoother experience for the Bookshelf users. Using the `queryCache`, we can prefetch queries so that loading the books on the discover list appears instant for the user, and also instantly display changes (if any) if the user navigates back to the book search list after viewing a specific book. We can also use `queryCache` to skip the loading process for individual books, given that the book data is already provided to us via the book search and reading list queries. Finally, we also explore adding optimistic UI for React Query mutations so that state updates feel instant for the user, yet we can also roll back to the previous state if the request somehow fails.
+
+## Part 3
+
+### 7. Context
+
+- [Exercise Solution](exercises/07/exercise/)
+- 💯 Extra Credit
+  1. [Create a `useAuth` hook](exercises/07/extra-1/)
+  2. [Create an `AuthProvider` component](exercises/07/extra-2/)
+  3. [Colocate global providers](exercises/07/extra-3/)
+  4. [Create a `useClient` hook](exercises/07/extra-4/)
+
+We improve the Authentication API for the Bookshelf app by extracting the authentication-related code into a separate React Context. This reduces the amount of prop drilling within the app, and ensures that only the components that actually need to deal with authentication code makes use of the context.
+
+We also use custom hooks to clean things up even further by moving the context-consuming code into a custom hook, and abstracting authenticated API calls into another custom hook.
