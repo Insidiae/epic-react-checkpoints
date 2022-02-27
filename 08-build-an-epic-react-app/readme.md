@@ -143,3 +143,17 @@ We than add tests for the custom `client` function we use to interact with the s
 We test the reusable `Modal` component using React Testing Library, making sure to test the basic functionality such as opening and closing the modal and also using accessible labels and roles to query the rendered components.
 
 We also test the `useAsync` hook using React Hooks Testing Library, starting by verifying the basic use cases using `useAsync`'s `run` function to handle async calls. We also test other configuration options such as providing an initial state and manually setting the `data` and `error` values. We also test `useAsync`'s ability to handle potential errors, such as attempting to set state on an unmounted component and `run`ning without a promise. We then apply the AHA principle to clean up some reused code across the test file.
+
+### 13. Integration Testing
+
+- [Exercise Solution](exercises/13/exercise/)
+- 💯 Extra Credit
+  1. [Create mock server for all fetch requests](exercises/13/extra-1/)
+  2. [Write second integration test](exercises/13/extra-2/)
+  3. [Create test utilities](exercises/13/extra-3/)
+  4. [Move test utilities to global utils](exercises/13/extra-4/)
+  5. [Cover more use cases](exercises/13/extra-5/)
+  6. [Create a component-specific utility](exercises/13/extra-6/)
+  7. [Write error state tests](exercises/13/extra-7/)
+
+We write a large part of the tests for the Bookshelf app with these integration tests, where we render the whole `App` component and use these tests to explore some user flows that can occur within the app. These integration tests pretty much use most of the concepts from the previous testing exercises, but now we actually test that the Bookshelf app's components actually work together correctly and the tests start resembling the way an real user would actually go around the app.
