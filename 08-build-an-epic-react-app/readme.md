@@ -133,3 +133,13 @@ React Query also provides tools to improve things further by also fetching the l
 We begin testing the features of the Bookshelf app by writing a few unit tests. As a warmup, we start by testing a simple `formatDate` function.
 
 We than add tests for the custom `client` function we use to interact with the server. We use `msw` to mock the server responses and write tests to ensure that the use cases for the `client` function all work properly. We also add more tests to verify that the `client` function correctly handles failure cases via promise rejection. We also add tests for the special case where the user should be logged out on a 401 error with the help of mocking the relevant modules via `jest.mock`.
+
+### 12. Testing Hooks and Components
+
+- [Exercise Solution](exercises/12/exercise/)
+- 💯 Extra Credit
+  1. [AHA Testing](exercises/12/extra-1/)
+
+We test the reusable `Modal` component using React Testing Library, making sure to test the basic functionality such as opening and closing the modal and also using accessible labels and roles to query the rendered components.
+
+We also test the `useAsync` hook using React Hooks Testing Library, starting by verifying the basic use cases using `useAsync`'s `run` function to handle async calls. We also test other configuration options such as providing an initial state and manually setting the `data` and `error` values. We also test `useAsync`'s ability to handle potential errors, such as attempting to set state on an unmounted component and `run`ning without a promise. We then apply the AHA principle to clean up some reused code across the test file.
