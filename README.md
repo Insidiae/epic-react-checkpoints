@@ -13,4 +13,4 @@ This repository contains my notes and solution code as I go through Kent C. Dodd
 5. ✅ [React Performance ⚡](05-react-performance/)
 6. ✅ [Testing React Apps 🧐](06-testing-react-apps/)
 7. ✅ [React Suspense 🔀](07-react-suspense/)
-8. ▶️ [Build an Epic React App 🚀](08-build-an-epic-react-app/)
+8. ✅ [Build an Epic React App 🚀](08-build-an-epic-react-app/)
