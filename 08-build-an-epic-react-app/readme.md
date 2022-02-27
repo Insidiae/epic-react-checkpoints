@@ -120,3 +120,46 @@ We also use `React.Profiler` to monitor different parts of the Bookshelf app and
 We provide an even smoother loading experience for the Bookshelf users by preloading the user data while the page renders. This is done by simply moving the user data request from inside the `useEffect` call to just outside the `AuthProvider` function. This can be done because the user data request doesn't actually need any data from the `AuthProvider` to start fetching the user data, so we can move the request outside the function so it can be run before the `useEffect` callbacks are even called!
 
 React Query also provides tools to improve things further by also fetching the list items and setting them into the query cache, and those requests can be done at the same time as the page is rendering so that the list items are instantly there as soon as the page finishes rendering. With a little help from Bookshelf's backend engineers, we can combine the user data request and the reading list item request into a single request to a special endpoint that returns both of those data at once!
+
+## Part 4
+
+### 11. Unit Testing
+
+- [Exercise Solution](exercises/11/exercise/)
+- 💯 Extra Credit
+  1. [Test failure cases](exercises/11/extra-1/)
+  2. [Use `setupTests.js`](exercises/11/extra-2/)
+
+We begin testing the features of the Bookshelf app by writing a few unit tests. As a warmup, we start by testing a simple `formatDate` function.
+
+We than add tests for the custom `client` function we use to interact with the server. We use `msw` to mock the server responses and write tests to ensure that the use cases for the `client` function all work properly. We also add more tests to verify that the `client` function correctly handles failure cases via promise rejection. We also add tests for the special case where the user should be logged out on a 401 error with the help of mocking the relevant modules via `jest.mock`.
+
+### 12. Testing Hooks and Components
+
+- [Exercise Solution](exercises/12/exercise/)
+- 💯 Extra Credit
+  1. [AHA Testing](exercises/12/extra-1/)
+
+We test the reusable `Modal` component using React Testing Library, making sure to test the basic functionality such as opening and closing the modal and also using accessible labels and roles to query the rendered components.
+
+We also test the `useAsync` hook using React Hooks Testing Library, starting by verifying the basic use cases using `useAsync`'s `run` function to handle async calls. We also test other configuration options such as providing an initial state and manually setting the `data` and `error` values. We also test `useAsync`'s ability to handle potential errors, such as attempting to set state on an unmounted component and `run`ning without a promise. We then apply the AHA principle to clean up some reused code across the test file.
+
+### 13. Integration Testing
+
+- [Exercise Solution](exercises/13/exercise/)
+- 💯 Extra Credit
+  1. [Create mock server for all fetch requests](exercises/13/extra-1/)
+  2. [Write second integration test](exercises/13/extra-2/)
+  3. [Create test utilities](exercises/13/extra-3/)
+  4. [Move test utilities to global utils](exercises/13/extra-4/)
+  5. [Cover more use cases](exercises/13/extra-5/)
+  6. [Create a component-specific utility](exercises/13/extra-6/)
+  7. [Write error state tests](exercises/13/extra-7/)
+
+We write a large part of the tests for the Bookshelf app with these integration tests, where we render the whole `App` component and use these tests to explore some user flows that can occur within the app. These integration tests pretty much use most of the concepts from the previous testing exercises, but now we actually test that the Bookshelf app's components actually work together correctly and the tests start resembling the way an real user would actually go around the app.
+
+### 14. E2E Testing
+
+- [Exercise Solution](exercises/14/exercise/)
+
+We write our final end-to-end (E2E) test for the Bookshelf app using Cypress, making a full test run for the entire Bookshelf app from registration to interacting with books on the reading list, exactly like a real user would (Cypress runs its test on its own instance of Google Chrome, and you can even watch everything that happens on the screen as the test runs!). With Cypress and React Testing Library, the code for test should look familiar because we make pretty much the same queries as before to get the relevant DOM elements.
