@@ -157,3 +157,9 @@ We also test the `useAsync` hook using React Hooks Testing Library, starting by 
   7. [Write error state tests](exercises/13/extra-7/)
 
 We write a large part of the tests for the Bookshelf app with these integration tests, where we render the whole `App` component and use these tests to explore some user flows that can occur within the app. These integration tests pretty much use most of the concepts from the previous testing exercises, but now we actually test that the Bookshelf app's components actually work together correctly and the tests start resembling the way an real user would actually go around the app.
+
+### 14. E2E Testing
+
+- [Exercise Solution](exercises/14/exercise/)
+
+We write our final end-to-end (E2E) test for the Bookshelf app using Cypress, making a full test run for the entire Bookshelf app from registration to interacting with books on the reading list, exactly like a real user would (Cypress runs its test on its own instance of Google Chrome, and you can even watch everything that happens on the screen as the test runs!). With Cypress and React Testing Library, the code for test should look familiar because we make pretty much the same queries as before to get the relevant DOM elements.
