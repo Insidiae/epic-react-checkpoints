@@ -120,3 +120,16 @@ We also use `React.Profiler` to monitor different parts of the Bookshelf app and
 We provide an even smoother loading experience for the Bookshelf users by preloading the user data while the page renders. This is done by simply moving the user data request from inside the `useEffect` call to just outside the `AuthProvider` function. This can be done because the user data request doesn't actually need any data from the `AuthProvider` to start fetching the user data, so we can move the request outside the function so it can be run before the `useEffect` callbacks are even called!
 
 React Query also provides tools to improve things further by also fetching the list items and setting them into the query cache, and those requests can be done at the same time as the page is rendering so that the list items are instantly there as soon as the page finishes rendering. With a little help from Bookshelf's backend engineers, we can combine the user data request and the reading list item request into a single request to a special endpoint that returns both of those data at once!
+
+## Part 4
+
+### 11. Unit Testing
+
+- [Exercise Solution](exercises/11/exercise/)
+- 💯 Extra Credit
+  1. [Test failure cases](exercises/11/extra-1/)
+  2. [Use `setupTests.js`](exercises/11/extra-2/)
+
+We begin testing the features of the Bookshelf app by writing a few unit tests. As a warmup, we start by testing a simple `formatDate` function.
+
+We than add tests for the custom `client` function we use to interact with the server. We use `msw` to mock the server responses and write tests to ensure that the use cases for the `client` function all work properly. We also add more tests to verify that the `client` function correctly handles failure cases via promise rejection. We also add tests for the special case where the user should be logged out on a 401 error with the help of mocking the relevant modules via `jest.mock`.
